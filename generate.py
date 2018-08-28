@@ -13,7 +13,7 @@ def argument_parser():
 
 
 def main():
-    args = argument_parser()
+    # args = argument_parser()
     os.system("pandoc README.md -o report.pdf")
 
 
