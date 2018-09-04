@@ -346,6 +346,7 @@ $if(beamer)$
 \frame{\titlepage}
 $else$
 \maketitle
+\newpage
 $endif$
 $if(abstract)$
 \begin{abstract}
@@ -353,7 +354,7 @@ $abstract$
 \end{abstract}
 $endif$
 $endif$
-
+\newpage
 $for(include-before)$
 $include-before$
 
@@ -370,6 +371,7 @@ $if(colorlinks)$
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
+\newpage
 }
 $endif$
 $endif$

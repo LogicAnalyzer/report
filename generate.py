@@ -25,7 +25,7 @@ def argument_parser():
 
 def main():
     # args = argument_parser()
-    os.system("pandoc " + " ".join(files) + " -s --template report.tex --toc -o report.pdf")
+    os.system("pandoc " + " ".join(files) + " -s --template report.tex -o report.pdf")
 
 
 if __name__ == "__main__":
