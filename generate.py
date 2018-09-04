@@ -8,7 +8,7 @@ files = ["documents/abstract.md",
          "documents/chapter2_background.md",
          "documents/chapter3_requirements.md",
          "documents/chapter4_system_design.md",
-         "documents/chapter5_implementations.md",
+         "documents/chapter5_implementation.md",
          "documents/chapter6_tools.md",
          "documents/chapter7_testing.md",
          "documents/chapter8_conclusion.md"
