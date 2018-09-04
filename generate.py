@@ -3,7 +3,7 @@
 import os
 import argparse
 
-files = ["documents/abstract.md",
+files = ["report.yaml",
          "documents/chapter1_introduction.md",
          "documents/chapter2_background.md",
          "documents/chapter3_requirements.md",
@@ -25,7 +25,7 @@ def argument_parser():
 
 def main():
     # args = argument_parser()
-    os.system("pandoc " + " ".join(files) + " -o report.pdf")
+    os.system("pandoc " + " ".join(files) + " -s --template report.tex --toc -o report.pdf")
 
 
 if __name__ == "__main__":
