@@ -10,6 +10,7 @@ author:
 toc: yes
 lof: yes
 lot: yes
+
 keyword: [logic, analyzer, test, report]
 geometry: "hmargin=1in,vmargin=1in"
 header-includes:

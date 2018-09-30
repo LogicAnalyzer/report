@@ -4,7 +4,7 @@
 
 <!-- [Describe a general architectural solution for your system.  This section must include textual description accompanied with diagrams.] -->
 
-![System Architecture](images/architecture.png)
+![System Architecture](images/architecture.png){width=50%}
 
 Figure 1. System Architecture Block Diagram
 
@@ -54,4 +54,5 @@ In terms of keeping component costs down and choosing components that will be re
 We haven’t decided on a software license yet, but we are leaning towards a GPL compliant license to allow for the most code interoperability. The client software we will be using for our project is licensed under GPL which means that any modifications we make to that source will need to adhere to GPL as well. By adhering to a GPL compliant license we will also guarantee that contributors will have access to our code base, regardless of what happens to the project.
 
 For the tools we will be using in this project, we will do our hardware design in KiCad, a free open source EDA tool. We will also be using Xilinx’s free Vivado development environment to develop for the Spartan-7 and to develop for the Cypress FX-3, we will be using Cypress’s free EZ-USB suite. There are no real alternative for either of these suites and we must use them in order to develop for our chosen components. We cannot guarantee that these tools will be available in the future, but we can assume that they will continue to be available and free as long as these companies exist. At this point in time, Xilinx and Cypress have no reason to start charging for these tools, making it a safe choice to select these vendors.
+
 \newpage
