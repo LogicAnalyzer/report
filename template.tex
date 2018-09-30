@@ -1,0 +1,18 @@
+\PassOptionsToPackage{unicode=true}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+
+$if(colorlinks)$ %Color the links to a different color
+	\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+$endif$
+
+
+\begin{document}
+$if(title)$
+	\maketitle
+	\newpage
+$endif$
+
+$if(abstract)$
+	\begin(abstract)
+		$abstract$
+	\end(abstract)
