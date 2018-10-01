@@ -259,11 +259,14 @@ $endif$
 
 % TITLE PAGES %
 $if(title)$
+
 \pagenumbering{roman}
 \thispagestyle{empty}
 \begin{center}
 {\LARGE \bf $title$}\\
 \vspace*{\fill} 
+
+\singlespacing
 A Project Report\\
 Presented to\\
 The Faculty of the Computer Engineering Department\\
@@ -271,6 +274,7 @@ San Jose State University\\
 In Partial Fulfillment\\
 Of the Requirements for the Degree\\
 Bachelor of Science in Computer Engineering\\
+\doublespacing
 
 \vspace*{\fill}
 By\\
@@ -291,13 +295,17 @@ ALL RIGHTS RESERVED
 \newpage
 \thispagestyle{empty}
 \vspace*{\fill}
-\hspace{0.3\textwidth}{\bf APPROVED FOR THE COLLEGE OF ENGINEERING}\\ \par
+\setlength{\parskip}{0pt}
+\singlespacing
+\hspace{0.3\textwidth}{\bf APPROVED FOR THE COLLEGE OF ENGINEERING}\\ \\ \par
 \hspace{0.3\textwidth}\hrulefill \par
-\hspace{0.3\textwidth}$advisor$, Project Advisor\\ \par
+\hspace{0.3\textwidth}$advisor$, Project Advisor\\ \\\par
 \hspace{0.3\textwidth}\hrulefill \par
-\hspace{0.3\textwidth}$instructor$, Instructor\\ \par
+\hspace{0.3\textwidth}$instructor$, Instructor\\ \\\par
 \hspace{0.3\textwidth}\hrulefill \par
-\hspace{0.3\textwidth}$chair$, Computer Engineering Department Chair
+\hspace{0.3\textwidth}$chair$, Computer Engineering Department Chair \par
+\setlength{\parskip}{\baselineskip}
+\doublespacing
 
 % ABSTRACT PAGE %
 $if(abstract)$
@@ -326,6 +334,7 @@ $acknowledgements$
 \vspace*{\fill}
 $endif$
 
+\doublespacing
 $for(include-before)$
 \thispagestyle{empty}
 $include-before$
