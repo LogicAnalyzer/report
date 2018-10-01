@@ -251,13 +251,18 @@ $for(bibliography)$
 $endfor$
 $endif$
 
+% Headers %
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
 \begin{document}
 
 % TITLE PAGES %
 $if(title)$
+\pagenumbering{roman}
+\thispagestyle{empty}
 \begin{center}
-{\LARGE $title$}\\
-
+{\LARGE \bf $title$}\\
 \vspace*{\fill} 
 A Project Report\\
 Presented to\\
@@ -269,48 +274,66 @@ Bachelor of Science in Computer Engineering\\
 
 \vspace*{\fill}
 By\\
-$for(author)$$author$ $sep$ $endfor$\\
+\hspace{0.5cm}$for(author)$$author$ \hspace{0.5cm} $endfor$\\
 $date$
-\newpage
 
-% COPYRIGHT PAGE $
+% COPYRIGHT PAGE% %
+\newpage
+\thispagestyle{empty}
 \vspace*{\fill}
 Copyright $year$\\
-$for(author)$$author$ $sep$ $endfor$\\
+\hspace{0.5cm}$for(author)$$author$ \hspace{0.5cm} $endfor$\\
 ALL RIGHTS RESERVED
 \end{center}
-\newpage
+
 
 % SIGNATURE PAGE %
-\vspace*{\fill}
-\begin{right}
-APPROVED FOR THE COLLEGE OF ENGINEERING\\
-\hrulefill\\
-$advisor$, Project Advisor\\
-\hrulefill\\
-$instructor$, Instructor\\
-\hrulefill\\
-$chair$, Computer Engineering Department Chair
-\end{right}
 \newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\hspace{0.3\textwidth}{\bf APPROVED FOR THE COLLEGE OF ENGINEERING}\\ \par
+\hspace{0.3\textwidth}\hrulefill \par
+\hspace{0.3\textwidth}$advisor$, Project Advisor\\ \par
+\hspace{0.3\textwidth}\hrulefill \par
+\hspace{0.3\textwidth}$instructor$, Instructor\\ \par
+\hspace{0.3\textwidth}\hrulefill \par
+\hspace{0.3\textwidth}$chair$, Computer Engineering Department Chair
 
-
+% ABSTRACT PAGE %
 $if(abstract)$
-\begin{abstract}
+\newpage
+\thispagestyle{empty}
+\begin{center}
+{\Large \bf ABSTRACT}\par
+$title$\par
+By$for(author)$\hspace{0.5cm} $author$ $endfor$\\ \par
+\end{center}
 $abstract$
-\end{abstract}
 $endif$
 
 $endif$
 % END TITLE PAGES %
-\newpage
 
+
+$if(acknowledgements)$
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+{\bf Acknowledgements}\par
+$acknowledgements$
+\end{center}
+\vspace*{\fill}
+$endif$
 
 $for(include-before)$
+\thispagestyle{empty}
 $include-before$
 $endfor$
 
 $if(toc)$
+\newpage
+\thispagestyle{empty}
 $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
 $endif$
@@ -318,15 +341,20 @@ $endif$
 \tableofcontents
 $endif$
 
-$if(lot)$
-\listoftables
-$endif$
-
 $if(lof)$
+\newpage
+\thispagestyle{empty}
 \listoffigures
 $endif$
 
+$if(lot)$
 \newpage
+\thispagestyle{empty}
+\listoftables
+$endif$
+
+\newpage
+\pagenumbering{arabic}
 $body$
 
 $if(natbib)$
