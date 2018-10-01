@@ -36,7 +36,6 @@ The software and firmware that we produce for this project must be licensed in a
 
 The tools we use to design our software, firmware, and hardware all need to available to the general public for free. The tools to contribute to this project should not cost the contributor anything. We also are aiming to use as much open source software as possible to guarantee the tools we use will continue to be free in the future.
 
-
 ### Design Solutions and Trade-offs ###
 
 <!-- [Document your approaches to cope with the given constraints. Present your design trade-off decisions and solution selections to deal with these constraints and problems and challenges.] -->

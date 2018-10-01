@@ -10,7 +10,6 @@ One of the main features of this project is having high-speed data analysis. The
 
 The second main feature of the this project is to be fully open sourced. This means barring the market modules used, every tool used and document created will be open for view and fair use by the community. This goal will allow the logic analyzer to continue to be maintained and improved after the project is complete. It also allows anyone who wants to reproduce the project to see all stages and steps that were taken to achieve success.
 
-
 ## Problem and Motivation ##
 
 <!-- [Describe the problem, motivation, and needs of your project. You need to address why this project is important and what is the problem you have addressed.] -->
@@ -26,7 +25,6 @@ Academic - Providing an open source logic analyzer project could allow for other
 Industry - By providing a low cost logic analyzer that is completely free, hardware companies could integrate the logic analyzer into their own products which could aid in faster development times
 
 Society - Low cost, open source hardware tools could decrease costs of products due to less expensive development costs. Some of these products could be life saving medical devices, safety critical devices, or other devices that require accurate testing. Reducing the cost of testing can reduce the cost of these important systems overall, expanding the impact across communities.
-
 
 ## Project Results and Deliverables ##
 

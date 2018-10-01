@@ -1,11 +1,16 @@
 ---
 title: Open Source High Speed Logic Analyzer Utilizing USB 3.0
 date: \today{}
+year: \the\year
 institute: San Jose State University
 author:
 - Alex Norell
 - Bryan Cole
 - John Tumath
+
+advisor: Dr. Donald Hung
+instructor: Professor Rod Fatoohi
+chair: Dr. Xiao Su
 
 toc: yes
 lof: yes
