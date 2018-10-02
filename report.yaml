@@ -2,7 +2,6 @@
 title: Open Source High Speed Logic Analyzer Utilizing USB 3.0
 date: \today{}
 year: \the\year
-institute: San Jose State University
 author:
 - Alex Norell
 - Bryan Cole
