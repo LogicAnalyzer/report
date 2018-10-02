@@ -3,8 +3,9 @@ pipeline{
 	stages{
 		stage("Build"){
 			steps{
-				[ -e report.pdf ] && rm report.pdf
-				python3 generate.py
+				sh '[ -e report.pdf ] && rm report.pdf"'
+				sh 'python3 generate.py'
+				archiveArtifacts artifacts: 'report.pdf', fingerprint: tru
 			}
 		}
 	}
