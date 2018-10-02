@@ -5,8 +5,13 @@ pipeline{
 			steps{
 				sh '[ -e report.pdf ] && rm report.pdf'
 				sh 'python3 generate.py'
-				archiveArtifacts artifacts: 'report.pdf', fingerprint: tru
 			}
+		}
+		stage("Archive PDF"){
+			steps{
+				archiveArtifacts artifacts: 'report.pdf', fingerprint: true			
+			}
+
 		}
 	}
 }
