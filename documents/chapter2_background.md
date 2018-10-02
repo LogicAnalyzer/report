@@ -4,11 +4,21 @@
 
 <!-- [Provide the necessary background of this project, including concepts and knowledge (e.g design patterns, asynchronous programming, project estimation, scientific and mathematical theories), along with technologies (e.g. PhP, MySql). In addition, provide an updated table of courses you have taken that you applied to the project and how you applied them.] -->
 
-<!--From a hardware standpoint, internal components of the logic analyzer requires an understanding of memory interfacing with DDR3, in particular, how to interface with the Xilinx Series 7 FPGA family. Xilinx provides memory management tools to help facilitate these types of designs. Also, maximizing the throughput of the FX-3 microcontroller will require the understanding of new high-speed technologies on the market. Another important technology needed will be high-speed PCB design and fabrication methods for the final product. -->
+
+
+| Course | Description | 
+| --- | ------- |
+| Digital Design I | This course taugh us the basics of digital logic and was heavily hands on. This was also our first experice using logic analyzers. |
+| Digital Design II | This course was our first Verilog course which introduced us to our development board, as well as the concepts of RTL design. |
+| Computer Architecture and Design | This was our capstone RTL design course, having us create a reduced instruction set MIPS I CPU from scratch. |
+| Microprocessor Design | This course was our first Microprocessor course, where we spent hands on time interfacing with a microprocessor. During this time we started to notice the downfalls of current logic analyzers on the market. |
+| Real-Time Embedded System Engineering | This course was our capstone Microprocessor course, teaching the fundamentals of good system design, which has helped us in designing our system. |
+| Software Engineering I | This course introduced us to various software engineering topics including project management, which has helped us a lot on this project. |
+Table: Courses Taken
 
 Verification methodologies and tools, such as UVM and SystemVerilog, were excellent in testing the many modules required in the FPGA design. They were also useful to help speed the verification process along as development time is extremely short.
 
-On the user’s side, the Sigrok interface and system drivers have been created to allow the client computer to recognize and connect via USB to the logic analyzer. The software/hardware integration will be a major hurdle, especially at the target speeds, however there is sufficient documentation concerning the Cypress FX-3 to complete that requirement.
+On the user’s side, the Sigrok interface and system drivers have been created to allow the client computer to recognize and connect via USB to the lo gic analyzer. The software/hardware integration will be a major hurdle, especially at the target speeds, however there is sufficient documentation concerning the Cypress FX-3 to complete that requirement.
 
 ## Literature Search ##
 

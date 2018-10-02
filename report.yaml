@@ -14,6 +14,8 @@ chair: Dr. Xiao Su
 toc: yes
 lof: yes
 lot: yes
+table_captions: yes
+pipe_tables: yes
 
 keyword: [logic, analyzer, test, report]
 geometry: "hmargin=1in,vmargin=1in"
