@@ -19,7 +19,7 @@ pipe_tables: yes
 
 keyword: [logic, analyzer, test, report]
 geometry: "hmargin=1in,vmargin=1in"
-mainfont: Times New Roman
+mainfont: Merriweather
 fontsize: 12pt
 header-includes:
     - \usepackage{setspace}
