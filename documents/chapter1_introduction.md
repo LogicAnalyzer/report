@@ -20,7 +20,7 @@ Logic analyzers are an important tool used in hardware development. Currently th
 
 <!-- [Describe the application of your project results, and its impacts to academic, industry, and society.] -->
 
-## Academic ###
+### Academic ###
 Providing an open source logic analyzer project could allow for other academic projects the tools necessary to test new designs without relying on expensive industry tools. Academic projects could also refactor our open source logic analyzer to work with a specific application they are developing.
 
 ### Industry ###

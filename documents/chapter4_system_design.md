@@ -6,8 +6,6 @@
 
 ![System Architecture](images/architecture.png){width=50%}
 
-Figure 1. System Architecture Block Diagram
-
 The centerpiece of the project is the Xilinx Spartan-7 FPGA. This device will perform an array of tasks required for logic analysis. All data lines will run through a buffer to allow high voltage tolerance and go directly into the FPGA for processing. The FPGA will perform any required pre-processing then either store the data locally or send it to the overflow DDR3 DRAM. This decision will be based on the user preferences, which will allow choosing between streaming the data or storing and sending in blocks.
 
 The microcontroller is the next major piece of hardware in the design. The Cypress FX-3 microcontroller will be used to implement the USB-3.0 high-speed stream and block data transfer. The data transfer will be used to get the information from the FPGA to the PC and also to allow programming of the device. An EEPROM will be used to allow updating of the firmware driving the FPGA and FX-3 microcontroller. This ability to update the firmware is fundamental to the open source principles this project is based on allowing users to improve upon the initial design we release.
