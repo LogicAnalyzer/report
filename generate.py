@@ -25,6 +25,12 @@ def argument_parser():
 
 def main():
     # args = argument_parser()
+    # Remove the report.pdf file before we build.
+    # Useful for artifacting
+    try:
+        os.remove("report.pdf")
+    except OSError:
+        pass
     os.system("pandoc " + " ".join(files) + " -s --template template.tex --pdf-engine=xelatex -N -o report.pdf")
 
 
