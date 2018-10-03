@@ -4,7 +4,7 @@
 
 <!-- [Describe a general architectural solution for your system.  This section must include textual description accompanied with diagrams.] -->
 
-![System Architecture](images/architecture.png){width=50%}
+![System Architecture](images/high_level.png){width=50%}
 
 The centerpiece of the project is the Xilinx Spartan-7 FPGA. This device will perform an array of tasks required for logic analysis. All data lines will run through a buffer to allow high voltage tolerance and go directly into the FPGA for processing. The FPGA will perform any required pre-processing then either store the data locally or send it to the overflow DDR3 DRAM. This decision will be based on the user preferences, which will allow choosing between streaming the data or storing and sending in blocks.
 
