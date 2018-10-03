@@ -33,7 +33,7 @@ Low cost, open source hardware tools could decrease costs of products due to les
 
 <!-- [Describe your actual project results (such as a system, and a component) and project deliverables (such as report, prototype, code, etc.).] -->
 
-### Report### 
+### Report ### 
 A key deliverable is this report. The report includes a thorough and detailed documentation of this project. The report is written in a way to allow a person with no knowledge on the project, but complete industry knowledge to complete the project only using the information contained in the document. The report also allows someone with no knowledge on the current state of the industry for logic analyzers to get a complete understanding through reading the report.
 
 ### Source Code ### 
