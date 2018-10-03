@@ -4,6 +4,7 @@
 
 <!-- [Provide the necessary background of this project, including concepts and knowledge (e.g design patterns, asynchronous programming, project estimation, scientific and mathematical theories), along with technologies (e.g. PhP, MySql). In addition, provide an updated table of courses you have taken that you applied to the project and how you applied them.] -->
 
+While going through our course work at San Jose State, we have used logic analyzers for various projects and assignments. We were not satisfied with the performance and user exeperience with any of the analyzered we used, so we decided it would be a good project to build our own to our specifications. 
 
 | Course 									| Description | 
 | --- 										| ------- |
