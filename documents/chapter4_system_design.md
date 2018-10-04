@@ -10,7 +10,7 @@ The centerpiece of the project is the Xilinx Artix-7 FPGA. This device performs 
 
 The microcontroller is the next major piece of hardware in the design. The Cypress FX-3 microcontroller  This ability to update the firmware is fundamental to the open source principles this project is based on allowing users to improve upon the initial design we release.
 
-The final part of the system architecture is the PC user interface which will be displayed on the open source signal UI Sigrok. In order to be displayed on sigrok, the USB data transfer will have to go through a middleware to parse the data to allow Sigrok to display it.
+The final part of the system architecture is the PC user interface which will be displayed on the open source signal UI Sigrok. In order to be displayed on sigrok, the USB data transfer wgitill have to go through a middleware to parse the data to allow Sigrok to display it.
 
 ## Interface and Component Design ##
 
@@ -26,7 +26,13 @@ The right column of our interface design diagram shows the software components t
 
 <!-- [Present the detailed structure and logic design for your hardware/software components and processes. This section must include textual description accompanied with diagrams. If scientific or mathematical fundamentals are used for your project algorithm, specify what kind of formula or theory has been applied.] -->
 
-The structura
+As discussed in the prevous section, our project has three main parts, the data acquisition and storage done on the FPGA, the data transfer done on the USB 3.0 controller, and the PC interface that takes that data and presents it to sigrok for user analysis. 
+
+The logic signals coming in from the device under test are immediated sent into a trigger module that checks to see see if the device is ready to start capturing data. If the device is ready, it captures the data from the lines and stores it into a buffer. The FPGA then grabs data packets from the buffer and stores them along with the time at which they were captured, usually in microseconds after acquisition started. When the acquisition is done, the data is then sent to the USB controller to send the data to the PC.
+
+The USB controller harware takes care of all of the protocol handling required to get the data transfered to the PC, and the drivers provided by the manufacturer for various operating systems handle the receiving of the data packet as well. The way the data is packaged before sending it is the way the data comes out on the host machine. The data is then sent to an interface driver that converts the data into signals readable by sigrok.
+
+The data translation is well laid out in Sigrok's documentation. We also have a separate control program that interfaces with sigrok and pulseview that allows us to set up acquistion and trigger settings in the software and request a capture. These functions are all done inside of pulseview, facilitated by our custom interface driver. 
 
 ## Design Constraints, Problems, Trade-offs, and Solutions ##
 
