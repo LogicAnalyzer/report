@@ -20,11 +20,13 @@ The design of most logic analyzers is relatively linear. Data comes in, gets pro
 
 ![Interface Design](images/flow_diagram.png){width=50%}
 
-
+The right column of our interface design diagram shows the software components that we used to get the signals to display on Pulseview after getting them from our device. The middle column shows the hardware and software components needed to read in the logic signals and send the data the computer. Objects in blue are components that we designed and objects in green are components that are provided through third party software, or from our hardware manufacturers. 
 
 ## Structure and Logic Design ##
 
 <!-- [Present the detailed structure and logic design for your hardware/software components and processes. This section must include textual description accompanied with diagrams. If scientific or mathematical fundamentals are used for your project algorithm, specify what kind of formula or theory has been applied.] -->
+
+The structura
 
 ## Design Constraints, Problems, Trade-offs, and Solutions ##
 
