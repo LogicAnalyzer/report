@@ -10,7 +10,7 @@ The centerpiece of the project is the Xilinx Artix-7 FPGA. This device performs 
 
 The microcontroller is the next major piece of hardware in the design. The Cypress FX-3 microcontroller  This ability to update the firmware is fundamental to the open source principles this project is based on allowing users to improve upon the initial design we release.
 
-The final part of the system architecture is the PC user interface which will be displayed on the open source signal UI Sigrok. In order to be displayed on sigrok, the USB data transfer wgitill have to go through a middleware to parse the data to allow Sigrok to display it.
+The final part of the system architecture is the PC user interface which will be displayed on the open source signal UI Sigrok. In order to be displayed on sigrok, the USB data transfer has to go through a middleware to parse the data to allow Sigrok to display it.
 
 ## Interface and Component Design ##
 
