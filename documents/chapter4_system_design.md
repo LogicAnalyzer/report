@@ -16,6 +16,12 @@ The final part of the system architecture is the PC user interface which will be
 
 <!-- [Draw the actual component diagram with textual description. This section must include textual description accompanied with diagrams] -->
 
+The design of most logic analyzers is relatively linear. Data comes in, gets processed, stored, and then returned to the requester for analysis. Our project adheres to this design as well. 
+
+![Interface Design](images/flow_diagram.png){width=50%}
+
+
+
 ## Structure and Logic Design ##
 
 <!-- [Present the detailed structure and logic design for your hardware/software components and processes. This section must include textual description accompanied with diagrams. If scientific or mathematical fundamentals are used for your project algorithm, specify what kind of formula or theory has been applied.] -->
