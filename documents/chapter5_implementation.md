@@ -2,7 +2,9 @@
 
 ## Implementation Overview ##
 <!-- [This chapter describes your implementation scope, used platform and language, dependent hardware/software, and implementation dependencies.] -->
+
 The scope of this project consists of utilizing a Digilent Nexys 4 DDR Prototype board consisting of a Xilinx Artix-7 FPGA and numerous other on-board peripherals to form the prototype logical analyzer unit. The Nexys 4 development board connects to a PC via the USB connection for transmitting the sampling data from the logic analyzer to the host’s PC, as well as to send commands from the PC to the logic analyzer. Software implementation includes writing drivers to support the host-to-device connection, as well as using the sigrok API to allow the user to interface with the device. The physical hardware was set up as shown in the following figure.
+
 ![Physical design of the Logic Analyzer project](images/physical_system.png){width=75%}
 
 ## Implementation of Developed Solutions ##
