@@ -5,6 +5,7 @@
 <!-- [Use UML 2 activity diagram to draw process summary diagram and a set of process decomposition diagrams. Draw a domain class diagram of business classes with attributes; draw a set of state machine diagrams for key business classes.] -->
 
 |The device MUST...|
+|------------------|
 |Follow the USB interface standards for voltage and communication|
 |Not interfere with the operation of the device it is sampling from|
 
