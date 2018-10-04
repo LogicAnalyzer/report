@@ -18,12 +18,14 @@
 |Support a minimum of 8 channels of data capture|
 |Provide storage for the entire capture before sending it to the host PC|
 |Be able to transmit opcodes via USB to the logic analyzer|
+
 |Sigrok Must...|
 |-------------|
 |Be able to receive data from logic analyzer|
 |Be able to display the results of a capture on screen for the user|
 
 |The Device SHOULD...|
+|------------|
 |Support a maximum of 16 channels of data capture|
 |Allow for streaming a capture to the host PC|
 
@@ -31,6 +33,7 @@
 <!-- [List an organized set of statements describing requirements placed on the system, e.g., performance, capacity, availability, compliance to standards, security, etc.  This section must include textual description accompanied with tables. Ensure these requirements (as well as those stated in Section 3.2) can be measured in Chapter 7 on testing.  For example, “The system shall be fast” is not an appropriate requirement, but The system commands shall deliver .9 second response time in the first 3 months 99 percent of the time as measured end-to-end.] -->
 
 |The device MUST…|
+|-----------|
 |Capture signals at a minimum speed of 50MHz|
 |The logic analyzer MUST implement communication to a host PC using USB 2.0 communication|
 |Be 3.3v tolerant|
@@ -40,6 +43,7 @@
 
 
 |The device SHOULD…|
+|-----------|
 |Capture signals at a speeds up to  200Mhz|
 |The logic analyzer SHOULD implement communication to a host PC using USB 2.0 or USB 3.0|
 |Be open source compliant|
