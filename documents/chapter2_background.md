@@ -4,7 +4,7 @@
 
 <!-- [Provide the necessary background of this project, including concepts and knowledge (e.g design patterns, asynchronous programming, project estimation, scientific and mathematical theories), along with technologies (e.g. PhP, MySql). In addition, provide an updated table of courses you have taken that you applied to the project and how you applied them.] -->
 
-While going through our course work at San Jose State, we have used logic analyzers for various projects and assignments. We were not satisfied with the performance and user exeperience with any of the analyzered we used, so we decided it would be a good project to build our own to our specifications. 
+While going through our course work at San Jose State, we have used logic analyzers for various projects and assignments. We were not satisfied with the performance and user exeperience with any of the analyzered we used, so we decided it would be a good project to build our own to our specifications. ß
 
 | Course 									| Description | 
 | --- 										| ------- |
@@ -20,7 +20,7 @@ Verification methodologies and tools, such as UVM and SystemVerilog, were excell
 
 On the user’s side, the Sigrok interface and system drivers have been created to allow the client computer to recognize and connect via USB to the logic analyzer. The software/hardware integration will be a major hurdle, especially at the target speeds, however there is sufficient documentation concerning the Cypress FX-3 to complete that requirement.
 
-## Literature Search ##
+<!-- ## Literature Search ## -->
 
 <!-- [Similarly, present your updated literature search adding to those that you explained in Chapter 1 of 195A workbook.] -->
 
