@@ -9,8 +9,8 @@ files = ["report.yaml",
          "documents/chapter3_requirements.md",
          "documents/chapter4_system_design.md",
          "documents/chapter5_implementation.md",
-         #"documents/chapter6_tools.md",
-         #"documents/chapter7_testing.md",
+         "documents/chapter6_tools.md",
+         "documents/chapter7_testing.md",
          #s"documents/chapter8_conclusion.md"
          ]
 
