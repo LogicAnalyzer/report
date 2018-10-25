@@ -12,7 +12,7 @@ The verilog testing followed the standard RTL testing method. First a testbench 
 The functional verification was used to ensure the module acted as expected in every case it might be in. With FPGA’s the turnaround time from changing code to a uploading a bitstream onto the board is very large. Using functional verification helps find any bugs in the logic of the module in a much faster way. Functional verification is ran on a hardware simulator hosted on a pc. This simulation allows a testbench to be written to examine all the signals and verify their state. This also provides waveforms that can be used to see the state of the module and the timing each signal changes.
 Hardware verification is required due to the fact that hardware does not always act the same way as the simulation. With hardware there can be issues with delays, metastable states, or other issues that can arise when running on a non simulated test environment. When the module is in hardware it is much more difficult to debug, so hardware test is not done until functional verification has been brought to a satisfactory level for that module.
 
-### PC-to-FPGA Communication ###
+<!-- ### PC-to-FPGA Communication ### -->
 
 ### Systems Integration and Sampling Tests ###
 
