@@ -12,11 +12,17 @@ Source code version control is an incredibly important part of every project, an
 
 ### Github ###
 
+Many open source projects are hosted on Github, and it made sense to also use them for hosting our senior project. Github allowed us to host multiple remote git repositories. Github also has project management which we used for tracking our progress and milestones. This project management integrates directly with our git commits which made keeping track of progesses even easier. 
 
 ### Cocotb ###
 
+In order to verify our RTL design on the FPGA, we used an open source unit testing framework. This unit testing framwork allowed us to write our tests in python and directly interface with our verilog design files. The results of the tests are output in a standard xUnit xml format, which can be parsed by many testing software suites.
 
 ### Icarus Verilog ###
+
+We used an open source RTL synthesizer with Cocotb for the testing of our design. Cocotb requires a synthezer to test the design and run the python tests, and Icarus verilog is the only open source and free synthezier. 
+
+### Jenkins ###
 
 
 ### Vivado ###
