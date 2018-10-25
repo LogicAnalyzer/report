@@ -6,6 +6,11 @@
 
 The testing plan for the project was broken into three focal areas: unit testing of all verilog modules, communication testing between the host PC and the FPGA development board, and lastly, integration testing involving captures from other development boards.
 
+
+## Testings and Experiment Approach ##
+
+<!-- [Describe the selected test strategies, test methods and techniques, as well as selected test coverage criteria. Test design content and test design summary could be included here, such as test case distribution and summary. These results must tie back to the requirements stated earlier.  This section must include textual description accompanied with figures and/or tables.] -->
+
 ### Verilog Modules ###
 
 The verilog testing followed the standard RTL testing method. First a testbench is written for functional verification of the module then the module is synthesized and tested on an FPGA. This testing method was done for every major module through each layer of abstraction. This starts at a unit level test and moves up to the full chip test. Modules with a small amount of inputs were tested exhaustively, while modules with a large input set were tested with both directed testing to test edge cases and random testing to increase coverage.
@@ -20,14 +25,33 @@ After extensive unit testing of individual verilog modules, a final top level te
 
 Hardware validation was performed by attaching leads from the PMODs on the Nexys4 DDR to pins on a SJOne development board. The SJOne board has at its core has LPC1758 CPU along with many onboard components, including a SPI FLASH memory module. Hardware validation was accomplished by generating transfers of data from the SJOne board and confirming through Sigrok’s decoder that the correct data was being transferred.  
 
-## Testings and Experiment Approach ##
-
-<!-- [Describe the selected test strategies, test methods and techniques, as well as selected test coverage criteria. Test design content and test design summary could be included here, such as test case distribution and summary. These results must tie back to the requirements stated earlier.  This section must include textual description accompanied with figures and/or tables.] -->
-
-
 
 ## Testing and Experiment Results and Analysis ##
 
 <!-- [Describe testing and experiment results and analysis. For example, test execution and test result summary, performance test result analysis, test coverage, bug distribution report, and so on. This section must include textual description accompanied with figures and/or tables.] -->
+
+![UART Receiver Test Bench](images/uart_rx_tb.png){width=75%}
+
+UART Receiver Test Bench - The transmission starts on the blue line transmitting the value of current data. Data received is the output of the receiver after transmission has completed (yellow line). This test was exhaustive due to the low amount of inputs (transmitting 8-bits requires only 256 transactions) 
+
+![UART Transmitter Test Bench](images/uart_tx_tb.png){width=75%}
+
+UART Transmitter Test Bench - Similar design to the receiver this test bench transmits every possible value for the 8-bits it is transmitting and ensures all values are transmitted correctly.
+
+![UART Transmitter Test Sample Output](images/uart_test_output.png){width=75%}
+
+UART Transmitter Test Sample Output Showing the last 7 transactions, this is used as a high level look into how the test went, waveforms were also inspected and verified.
+
+![DDR2 Testbench Waveform](images/ddr2_tb.png){width=75%}
+
+DDR2 testbench waveform - The DDR2 was tested by generating random traffic and ensurring the proper signals were sent and the correct value was stored. 
+
+#### Sampler / Trigger Unit Testing ####
+
+The sampler and trigger unit were tested together to assure that frequency divisions of the sampler were successfully being accomplished through the use of the `datavalid` signal, along with proper triggering on a given rising/falling mask. FigureX shows how there is a four cycle delay between when sample data entered the device before the pattern is detected which triggers it.
+
+![Sampler-Trigger Test Bench Waveform](images/sampler-trigger.png){width=75%}
+
+Sampler-Trigger Test Bench showing four rising clock edges between input until trigger (run).
 
 \newpage
