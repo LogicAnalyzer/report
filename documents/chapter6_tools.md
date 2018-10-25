@@ -46,7 +46,18 @@ We also used an oscilloscope for high speed timing and making sure that our logi
 ## Standards ##
 <!-- [This section describes the standards you used in your project. These standards could be related to hardware/software system and its components, requirements, design, interface, testing, protocols, documentation, and so on.] -->
 
-### Software ###
+### Version Control ###
+
+We used version control for everything in our project. All of our code has been in git since the beginning as well as our documentation. We specifically used markdown syntax to write out documentation so that the documentation could be viewalbe on github and that we could easily track our changes. 
+
+### Test Driven Development ###
+
+Unit testing was another imporant part of this project, and accounted for the second largest ammount of time spent. By desinging our project to use unit testing from the start, we were able to design our features by first writing tests of what we wanted the output to look like, and then developing the feature to pass the test. 
+
+### Continous Integration ###
+
+By developing our project using test driven development, we needed some way to constantly and automatically test our code base. Continous integration does exactly that which is why we developed the tools to continously integrate our codebase and return the tests results directly to github. 
 
 
+<!-- ### Black box testing ### -->
 \newpage
