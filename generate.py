@@ -14,8 +14,7 @@ FILES = ["report.yaml",
          "chapters/chapter5/chapter5_implementation.md",
          "chapters/chapter6/chapter6_tools.md",
          "chapters/chapter7/chapter7_testing.md",
-         # "chapters/chapter8/chapter8_conclusion.md"
-         ]
+         "chapters/chapter8/chapter8_conclusion.md"]
 
 
 def argument_parser():
@@ -47,10 +46,8 @@ def generate_diagram(diagram):
                          "--quality", "100",
                          "--scale", "4",
                          diagram, diagram.replace(".xml", ".png")]
-    print("Started " + diagram)
     os.system("drawio-batch " + " ".join(drawio_batch_args))
-    print("Finished " + diagram)
-
+    
 
 def get_list_of_diagrams():
     '''
@@ -80,7 +77,7 @@ def clean_pdf(to_remove):
         pass
 
 
-def create_single_markdown(file_paths, output_file):
+def create_single_body_markdown(file_paths, output_file):
     '''
     Join all the files together in order, adding a `\\newpage` latex command
     between each of them for formatting
@@ -93,6 +90,24 @@ def create_single_markdown(file_paths, output_file):
             outputfile.write("\n\\newpage\n")
 
 
+def create_appendix_markdown(root_directory, output_file):
+    ''' Create appendicies for modules and software architecture '''
+    resources = []
+    with open(output_file, "w+") as outputfile:
+        outputfile.write("\\appendix\n")
+        for root, dirs, files in os.walk(root_directory):
+            for file in files:
+                if file.endswith(".md"):
+                    resource_path = os.path.join(root, file).split("/")
+                    resource_path = "/".join(resource_path[1:resource_path.__len__()-1])
+                    resources.append(resource_path)
+                    with open(os.path.join(root, file)) as input_file:
+                        for line in input_file:
+                            outputfile.write(line)
+                    outputfile.write("\n\n")
+    return resources
+
+
 def main():
     ''' Entry point into the report generation script '''
     args = argument_parser()
@@ -100,25 +115,32 @@ def main():
         update_diagrams()
     clean_pdf(args.output)
     template = "template.tex"
-    single_markdown = "temp.md"
+    body_markdown = "body.md"
+    appendix_markdown = "appendix.md"
+    documentation_root = "documentation"
     resource_paths = ["chapters/chapter1", "chapters/chapter2",
                       "chapters/chapter3", "chapters/chapter4",
                       "chapters/chapter5", "chapters/chapter6",
                       "chapters/chapter7", "chapters/chapter8"]
 
+    create_single_body_markdown(FILES, body_markdown)
+    appendix_resources = create_appendix_markdown(documentation_root,
+                                                  appendix_markdown)
+    for resource in appendix_resources:
+        resource_paths.append(documentation_root + "/" + resource)
+    
     additional_pandoc_args = ["--standalone", "--number-sections",
                               "--template", template,
                               "--resource-path=" + ":".join(resource_paths),
                               "--pdf-engine=xelatex",
                               "--output", args.output]
-
-    create_single_markdown(FILES, single_markdown)
-
-    print("pandoc test.md " + " ".join(additional_pandoc_args))
-    os.system("pandoc test.md " + " ".join(additional_pandoc_args))
+    markdown_files = [body_markdown, appendix_markdown]
+    print("pandoc " " ".join(markdown_files + additional_pandoc_args))
+    os.system("pandoc " + " ".join(markdown_files + additional_pandoc_args))
     if not os.path.isfile(args.output):
         sys.exit(1)
-    os.remove(single_markdown)
+    os.remove(body_markdown)
+    os.remove(appendix_markdown)
 
 
 if __name__ == "__main__":
