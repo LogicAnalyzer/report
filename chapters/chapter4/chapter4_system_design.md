@@ -63,5 +63,3 @@ The Cypress FX-3 is another important pillar of our design, allowing for USB 3.0
 In terms of keeping component costs down and choosing components that will be readily available, choosing the Artix-7 and FX-3 were easy decisions. They are the some of the lowest cost options in their markets and neither of them are marked as end of life. We also made sure to check component suppliers such as Digikey and Mouser to make sure that there are sufficient quantities available for purchase.
 
 For the tools we will be using in this project, we used Xilinx’s free Vivado development environment to develop for the Artix-7 and to develop for the Cypress FX-3, we used Cypress’s free EZ-USB suite. There are no real alternative for either of these suites and we had to use them to develop for our chosen components. We cannot guarantee that these tools will be available in the future, but we can assume that they will continue to be available and free as long as these companies exist.
-
-\newpage

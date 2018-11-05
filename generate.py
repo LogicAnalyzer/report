@@ -3,9 +3,8 @@
 
 import os
 import sys
-import shutil
 import argparse
-import thread
+from multiprocessing.dummy import Pool as ThreadPool
 
 FILES = ["report.yaml",
          "chapters/chapter1/chapter1_introduction.md",
@@ -81,12 +80,17 @@ def clean_pdf(to_remove):
         pass
 
 
-def create_single_markdown(file_paths):
+def create_single_markdown(file_paths, output_file):
     '''
     Join all the files together in order, adding a `\\newpage` latex command
     between each of them for formatting
     '''
-    return file_paths
+    with open(output_file, "w+") as outputfile:
+        for file_path in file_paths:
+            with open(file_path) as inputfile:
+                for line in inputfile:
+                    outputfile.write(line)
+            outputfile.write("\n\\newpage\n")
 
 
 def main():
@@ -96,6 +100,7 @@ def main():
         update_diagrams()
     clean_pdf(args.output)
     template = "template.tex"
+    single_markdown = "temp.md"
     resource_paths = ["chapters/chapter1", "chapters/chapter2",
                       "chapters/chapter3", "chapters/chapter4",
                       "chapters/chapter5", "chapters/chapter6",
@@ -106,10 +111,14 @@ def main():
                               "--resource-path=" + ":".join(resource_paths),
                               "--pdf-engine=xelatex",
                               "--output", args.output]
-    print("pandoc " + " ".join(FILES + additional_pandoc_args))
-    os.system("pandoc " + " ".join(FILES + additional_pandoc_args))
+
+    create_single_markdown(FILES, single_markdown)
+
+    print("pandoc test.md " + " ".join(additional_pandoc_args))
+    os.system("pandoc test.md " + " ".join(additional_pandoc_args))
     if not os.path.isfile(args.output):
         sys.exit(1)
+    os.remove(single_markdown)
 
 
 if __name__ == "__main__":

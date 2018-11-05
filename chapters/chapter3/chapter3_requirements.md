@@ -62,5 +62,3 @@ The context of the project includes all the HDL code and hardware required to op
 <!-- [List the requirements for hardware (devices, components, systems, etc.) and software (compiler, database, middleware, etc.), technologies. This section must include textual description accompanied with tables.] -->
 
 The hardware requirements for this project include the Nexys 4 DDR as well as a host PC running the Windows 10 operating system. Future work will support multiple operating systems and possibly other FPGA devices as well. With the project being used with an FPGA at its core, there are many technologies released by the FPGA developer (in this case Xilinx) that are necessary, including the Vivado suite of tools and the Memory Interface Generator provided within.
-
-\newpage

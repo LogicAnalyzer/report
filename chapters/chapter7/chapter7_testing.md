@@ -53,5 +53,3 @@ The sampler and trigger unit were tested together to assure that frequency divis
 ![Sampler-Trigger Test Bench Waveform](images/sampler-trigger.png){width=75%}
 
 Sampler-Trigger Test Bench showing four rising clock edges between input until trigger (run).
-
-\newpage

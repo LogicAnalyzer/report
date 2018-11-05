@@ -53,5 +53,3 @@ We have a prototype of our initial design for review. <!-- This will include a p
 <!-- [Introduce the following sections of the document] -->
 
 The following seven chapters go into detail on all of our design choices. Chapter 2 discusses the theory of digital signal sampling, the history of digital signal analyzers, and the current state of the market. Chapter 3 covers the requirments that we believe represent a successful project. Chapter 4 covers the system design and our design choices. Chapter 5 talks about our implementation and the problems we overcame while developing this project. Chapter 6 discusses the tools we used to complete this project. Chapter 7 talks about our testing and verification. Chapter 8 is our conclusion to this project and what we have learned.
-
-\newpage
