@@ -30,19 +30,19 @@ Hardware validation was performed by attaching leads from the PMODs on the Nexys
 
 <!-- [Describe testing and experiment results and analysis. For example, test execution and test result summary, performance test result analysis, test coverage, bug distribution report, and so on. This section must include textual description accompanied with figures and/or tables.] -->
 
-![UART Receiver Test Bench](chapters/chapter7/images/uart_rx_tb.png){width=75%}
+![UART Receiver Test Bench](images/uart_rx_tb.png){width=75%}
 
 UART Receiver Test Bench - The transmission starts on the blue line transmitting the value of current data. Data received is the output of the receiver after transmission has completed (yellow line). This test was exhaustive due to the low amount of inputs (transmitting 8-bits requires only 256 transactions) 
 
-![UART Transmitter Test Bench](chapters/chapter7/images/uart_tx_tb.png){width=75%}
+![UART Transmitter Test Bench](images/uart_tx_tb.png){width=75%}
 
 UART Transmitter Test Bench - Similar design to the receiver this test bench transmits every possible value for the 8-bits it is transmitting and ensures all values are transmitted correctly.
 
-![UART Transmitter Test Sample Output](chapters/chapter7/images/uart_test_output.png){width=75%}
+![UART Transmitter Test Sample Output](images/uart_test_output.png){width=75%}
 
 UART Transmitter Test Sample Output Showing the last 7 transactions, this is used as a high level look into how the test went, waveforms were also inspected and verified.
 
-![DDR2 Testbench Waveform](chapters/chapter7/images/ddr2_tb.png){width=75%}
+![DDR2 Testbench Waveform](images/ddr2_tb.png){width=75%}
 
 DDR2 testbench waveform - The DDR2 was tested by generating random traffic and ensurring the proper signals were sent and the correct value was stored. 
 
@@ -50,7 +50,7 @@ DDR2 testbench waveform - The DDR2 was tested by generating random traffic and e
 
 The sampler and trigger unit were tested together to assure that frequency divisions of the sampler were successfully being accomplished through the use of the `datavalid` signal, along with proper triggering on a given rising/falling mask. FigureX shows how there is a four cycle delay between when sample data entered the device before the pattern is detected which triggers it.
 
-![Sampler-Trigger Test Bench Waveform](chapters/chapter7/images/sampler-trigger.png){width=75%}
+![Sampler-Trigger Test Bench Waveform](images/sampler-trigger.png){width=75%}
 
 Sampler-Trigger Test Bench showing four rising clock edges between input until trigger (run).
 

@@ -4,7 +4,7 @@
 
 <!-- [Describe a general architectural solution for your system.  This section must include textual description accompanied with diagrams.] -->
 
-![System Architecture](chapters/chapter4/images/high_level.png){width=50%}
+![System Architecture](images/high_level.png){width=50%}
 
 The centerpiece of the project is the Xilinx Artix-7 FPGA. This device performs an array of tasks required for logic analysis. The FPGA then stores a capture of the input data. 
 
@@ -18,7 +18,7 @@ The final part of the system architecture is the PC user interface which will be
 
 The design of most logic analyzers is relatively linear. Data comes in, gets processed, stored, and then returned to the requester for analysis. Our project adheres to this design as well. 
 
-![Interface Design](chapters/chapter4/images/flow_diagram.png){width=50%}
+![Interface Design](images/flow_diagram.png){width=50%}
 
 The right column of our interface design diagram shows the software components that we used to get the signals to display on Pulseview after getting them from our device. The middle column shows the hardware and software components needed to read in the logic signals and send the data the computer. Objects in blue are components that we designed and objects in green are components that are provided through third party software, or from our hardware manufacturers. 
 

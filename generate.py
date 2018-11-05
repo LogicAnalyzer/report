@@ -71,11 +71,17 @@ def main():
     args = argument_parser()
     clean_pdf(args.output)
     template = "template.tex"
+    resource_paths = ["chapters/chapter1", "chapters/chapter2",
+                      "chapters/chapter3", "chapters/chapter4",
+                      "chapters/chapter5", "chapters/chapter6",
+                      "chapters/chapter7", "chapters/chapter8"]
+
     additional_pandoc_args = ["--standalone", "--number-sections",
                               "--template", template,
+                              "--resource-path=" + ":".join(resource_paths),
                               "--pdf-engine=xelatex",
                               "--output", args.output]
-    # print("pandoc " + " ".join(files + additional_pandoc_args))
+    print("pandoc " + " ".join(FILES + additional_pandoc_args))
     os.system("pandoc " + " ".join(FILES + additional_pandoc_args))
     if not os.path.isfile(args.output):
         sys.exit(1)
