@@ -5,7 +5,7 @@
 
 The scope of this project consists of utilizing a Digilent Nexys 4 DDR Prototype board consisting of a Xilinx Artix-7 FPGA and numerous other on-board peripherals to form the prototype logical analyzer unit. The Nexys 4 development board connects to a PC via the USB connection for transmitting the sampling data from the logic analyzer to the host’s PC, as well as to send commands from the PC to the logic analyzer. Software implementation includes writing drivers to support the host-to-device connection, as well as using the sigrok API to allow the user to interface with the device. The physical hardware was set up as shown in the following figure.
 
-![Physical design of the Logic Analyzer project](images/physical_system.png){width=75%}
+![Physical design of the Logic Analyzer project](chapters/chapter5/images/physical_system.png){width=75%}
 
 ## Implementation of Developed Solutions ##
 <!-- [Present the detailed solutions, such as techniques, methods, algorithms, etc.]  -->
@@ -15,7 +15,7 @@ The HDL of choice for this project was Verilog. While SystemVerilog was a desira
 
 ### Software Implementation ###
 
-![I2S Stereo signal waveform displayed and decoded using Sigrok Pulseview](images/i2s-decode.png){width=75%}
+![I2S Stereo signal waveform displayed and decoded using Sigrok Pulseview](chapters/chapter5/images/i2s-decode.png){width=75%}
 
 Sigrok was used as the software graphical user interface for the logic analyzer. After the signals are read and stored by the logic analyzer data path the read is complete and is sent to the PC through a UART connection. The signals are then parsed and stored for Sigrok to read and display, allowing the user to analyze and decode them. Sigrok also serves as the users way of communicating with the logic analyzer during regular use. Sigrok sends opcode to the logic analyzer based on user commands in the GUI. The user is able to select the sample rate, choose a trigger pin, and start/abort a capture through the sigrok GUI.
 In order to accomplish the communication protocol a driver was written giving Sigrok a set of functions to call based on user input. This driver was written in C using UART communication through the USB port. When a user selects a command Sigrok finds the function associated with that command and calls it. Sigrok passes a AURT instance to the function that it calls allowing that function to handle the communication with the logic analyzer. The function then sends the corresponding op code to the device. In some cases the function waits for the device to respond and then parses the response into a format that Sigrok can then display to the user.

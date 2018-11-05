@@ -6,14 +6,14 @@ import sys
 import argparse
 
 FILES = ["report.yaml",
-         "chapters/chapter1_introduction.md",
-         "chapters/chapter2_background.md",
-         "chapters/chapter3_requirements.md",
-         "chapters/chapter4_system_design.md",
-         "chapters/chapter5_implementation.md",
-         "chapters/chapter6_tools.md",
-         "chapters/chapter7_testing.md",
-         # "documents/chapter8_conclusion.md"
+         "chapters/chapter1/chapter1_introduction.md",
+         "chapters/chapter2/chapter2_background.md",
+         "chapters/chapter3/chapter3_requirements.md",
+         "chapters/chapter4/chapter4_system_design.md",
+         "chapters/chapter5/chapter5_implementation.md",
+         "chapters/chapter6/chapter6_tools.md",
+         "chapters/chapter7/chapter7_testing.md",
+         # "chapters/chapter8/chapter8_conclusion.md"
          ]
 
 
@@ -56,6 +56,14 @@ def clean_pdf(to_remove):
         os.remove(to_remove)
     except OSError:
         pass
+
+
+def create_single_markdown(file_paths):
+    '''
+    Join all the files together in order, adding a `\\newpage` latex command
+    between each of them for formatting
+    '''
+    return file_paths
 
 
 def main():
