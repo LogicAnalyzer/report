@@ -5,7 +5,7 @@ import os
 import sys
 import argparse
 
-files = ["report.yaml",
+FILES = ["report.yaml",
          "documents/chapter1_introduction.md",
          "documents/chapter2_background.md",
          "documents/chapter3_requirements.md",
@@ -26,6 +26,30 @@ def argument_parser():
     return args
 
 
+def check_tools():
+    '''
+    Checks to see if all necessary tools are installed
+    Also checks to see if additional functionality can be used.
+    '''
+    return 0
+
+
+def update_diagrams():
+    '''
+    Function that runs `drawio-batch` on each of the draw.io diagrams.
+    This makes sure that the most recent version of the diagram is included
+    in the report.
+    '''
+    return 0
+
+
+def get_list_of_diagrams():
+    '''
+    Get a list of all draw.io diagrams in the current file tree
+    '''
+    return 0
+
+
 def clean_pdf(to_remove):
     ''' Function to delete previous pdf. Helps with Jenkins artifacting '''
     try:
@@ -39,11 +63,12 @@ def main():
     args = argument_parser()
     clean_pdf(args.output)
     template = "template.tex"
-    additional_pandoc_args = ["-s", "--template", template,
-                              "--pdf-engine=xelatex", "-N", "-o",
-                              args.output]
+    additional_pandoc_args = ["--standalone", "--number-sections",
+                              "--template", template,
+                              "--pdf-engine=xelatex",
+                              "--output", args.output]
     # print("pandoc " + " ".join(files + additional_pandoc_args))
-    os.system("pandoc " + " ".join(files + additional_pandoc_args))
+    os.system("pandoc " + " ".join(FILES + additional_pandoc_args))
     if not os.path.isfile(args.output):
         sys.exit(1)
 

@@ -336,49 +336,47 @@ $include-before$
 $endfor$
 
 $if(toc)$
-\newpage
-$if(colorlinks)$
-\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
-$endif$
-\setcounter{tocdepth}{$toc-depth$}
-\tableofcontents
+  \newpage
+  $if(colorlinks)$
+    \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
+  $endif$
+  \setcounter{tocdepth}{$toc-depth$}
+  \tableofcontents
 $endif$
 
 $if(lof)$
-\newpage
-\listoffigures
+  \newpage
+  \listoffigures
 $endif$
 
 $if(lot)$
-\newpage
-\listoftables
+  \newpage
+  \listoftables
 $endif$
 
 \newpage
 \pagenumbering{arabic}
+
 $body$
 
 $if(natbib)$
-$if(bibliography)$
-$if(biblio-title)$
+  $if(bibliography)$
+    $if(biblio-title)$
+      $if(book-class)$
+        \renewcommand\bibname{$biblio-title$}
+      $else$
+        \renewcommand\refname{$biblio-title$}
+      $endif$
+    $endif$
+    \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+  $endif$
+$endif$
 
-$if(book-class)$
-\renewcommand\bibname{$biblio-title$}
-
-$else$
-\renewcommand\refname{$biblio-title$}
-$endif$
-$endif$
-\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
-
-$endif$
-$endif$
 $if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+  \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 $endif$
 
 $for(include-after)$
-$include-after$
-
+  $include-after$
 $endfor$
 \end{document}
