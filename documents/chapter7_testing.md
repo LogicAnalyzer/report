@@ -46,7 +46,7 @@ UART Transmitter Test Sample Output Showing the last 7 transactions, this is use
 
 DDR2 testbench waveform - The DDR2 was tested by generating random traffic and ensurring the proper signals were sent and the correct value was stored. 
 
-#### Sampler / Trigger Unit Testing ####
+### Sampler / Trigger Unit Testing ####
 
 The sampler and trigger unit were tested together to assure that frequency divisions of the sampler were successfully being accomplished through the use of the `datavalid` signal, along with proper triggering on a given rising/falling mask. FigureX shows how there is a four cycle delay between when sample data entered the device before the pattern is detected which triggers it.
 
