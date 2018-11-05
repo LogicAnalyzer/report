@@ -6,13 +6,13 @@ import sys
 import argparse
 
 FILES = ["report.yaml",
-         "documents/chapter1_introduction.md",
-         "documents/chapter2_background.md",
-         "documents/chapter3_requirements.md",
-         "documents/chapter4_system_design.md",
-         "documents/chapter5_implementation.md",
-         "documents/chapter6_tools.md",
-         "documents/chapter7_testing.md",
+         "chapters/chapter1_introduction.md",
+         "chapters/chapter2_background.md",
+         "chapters/chapter3_requirements.md",
+         "chapters/chapter4_system_design.md",
+         "chapters/chapter5_implementation.md",
+         "chapters/chapter6_tools.md",
+         "chapters/chapter7_testing.md",
          # "documents/chapter8_conclusion.md"
          ]
 
