@@ -3,7 +3,9 @@
 
 import os
 import sys
+import shutil
 import argparse
+import thread
 
 FILES = ["report.yaml",
          "chapters/chapter1/chapter1_introduction.md",
@@ -22,16 +24,9 @@ def argument_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("-o", "--output", default="report.pdf")
     parser.add_argument("-v", "--verbosity", action="store_true")
+    parser.add_argument("-u", "--update_diagrams", action="store_true")
     args = parser.parse_args()
     return args
-
-
-def check_tools():
-    '''
-    Checks to see if all necessary tools are installed
-    Also checks to see if additional functionality can be used.
-    '''
-    return 0
 
 
 def update_diagrams():
@@ -40,14 +35,42 @@ def update_diagrams():
     This makes sure that the most recent version of the diagram is included
     in the report.
     '''
-    return 0
+    diagrams = get_list_of_diagrams()
+    pool = ThreadPool(4)
+    pool.map(generate_diagram, diagrams)
+    pool.close()
+    pool.join()
+
+
+def generate_diagram(diagram):
+    ''' Generate a png diagram from a draw.io xml file '''
+    drawio_batch_args = ["--format", "png",
+                         "--quality", "100",
+                         "--scale", "4",
+                         diagram, diagram.replace(".xml", ".png")]
+    print("Started " + diagram)
+    os.system("drawio-batch " + " ".join(drawio_batch_args))
+    print("Finished " + diagram)
 
 
 def get_list_of_diagrams():
     '''
     Get a list of all draw.io diagrams in the current file tree
     '''
-    return 0
+    diagrams = []
+    for root, dirs, files in os.walk("."):
+        for file in files:
+            if file.endswith(".xml"):
+                if check_for_draw_io(os.path.join(root, file)):
+                    diagrams.append(os.path.join(root, file).lstrip("./"))
+    return diagrams
+
+
+def check_for_draw_io(filepath):
+    ''' Check if a file is a draw.io file '''
+    with open(filepath, 'r') as file:
+        line = file.readline()
+    return 'draw.io' in line
 
 
 def clean_pdf(to_remove):
@@ -69,6 +92,8 @@ def create_single_markdown(file_paths):
 def main():
     ''' Entry point into the report generation script '''
     args = argument_parser()
+    if args.update_diagrams:
+        update_diagrams()
     clean_pdf(args.output)
     template = "template.tex"
     resource_paths = ["chapters/chapter1", "chapters/chapter2",
