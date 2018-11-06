@@ -93,6 +93,7 @@ def create_single_body_markdown(file_paths, output_file):
 def create_appendix_markdown(root_directory, output_file):
     ''' Create appendicies for modules and software architecture '''
     resources = []
+    detail_files = []
     with open(output_file, "w+") as outputfile:
         outputfile.write("\\appendix\n")
         for root, dirs, files in os.walk(root_directory):
@@ -101,10 +102,12 @@ def create_appendix_markdown(root_directory, output_file):
                     resource_path = os.path.join(root, file).split("/")
                     resource_path = "/".join(resource_path[1:resource_path.__len__()-1])
                     resources.append(resource_path)
-                    with open(os.path.join(root, file)) as input_file:
-                        for line in input_file:
-                            outputfile.write(line)
-                    outputfile.write("\n\n")
+                    detail_files.append(os.path.join(root, file))
+        for file in sorted(detail_files, key=lambda s: s.lower()):
+            with open(file) as input_file:
+                for line in input_file:
+                    outputfile.write(line)
+            outputfile.write("\n\n")
     return resources
 
 
@@ -135,7 +138,7 @@ def main():
                               "--pdf-engine=xelatex",
                               "--output", args.output]
     markdown_files = [body_markdown, appendix_markdown]
-    print("pandoc " " ".join(markdown_files + additional_pandoc_args))
+    print("pandoc " + " ".join(markdown_files + additional_pandoc_args))
     os.system("pandoc " + " ".join(markdown_files + additional_pandoc_args))
     if not os.path.isfile(args.output):
         sys.exit(1)
