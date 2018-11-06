@@ -1,3 +1,4 @@
 [submodule "documentation"]
 	path = documentation
 	url = git@github.com:LogicAnalyzer/documentation.git
+	branch = master
