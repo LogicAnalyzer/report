@@ -169,12 +169,14 @@ def main():
 
     print("pandoc " + " ".join(markdown_files + additional_pandoc_args))
     os.system("pandoc " + " ".join(markdown_files + additional_pandoc_args))
+
     if not os.path.isfile(args.output):
         sys.exit(1)
-    
+
     for file in markdown_files:
         os.remove(file)
 
 
 if __name__ == "__main__":
     main()
+

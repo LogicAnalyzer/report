@@ -16,11 +16,13 @@ lof: yes
 lot: yes
 table_captions: yes
 pipe_tables: yes
+tex_math_dollars: yes
 
 keyword: [logic, analyzer, test, report]
 geometry: "hmargin=1in,vmargin=1in"
 mainfont: Merriweather
 fontsize: 12pt
+
 header-includes:
     - \usepackage{setspace}
     - \doublespacing
