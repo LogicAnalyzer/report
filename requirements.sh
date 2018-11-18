@@ -11,6 +11,7 @@ if [ ! command -v pandoc ] then
 	wget https://github.com/jgm/pandoc/releases/download/2.4/pandoc-2.4-1-amd64.deb
 	sudo dpkg -i pandoc-*-amd64.deb
 	rm -rf pandoc-*.deb
+fi
 
 # Spelling stuff
 pip3 install junit-xml
