@@ -26,6 +26,10 @@ def main():
     ''' Main function of spell_check.py'''
     args = argument_parser()
     files = get_list_of_markdown_files()
+    for file in files:
+        print("\n\n" + file + ":")
+        os.system("cat " + file + " | aspell -a --extra-dicts ./" +
+            args.dictionary + " | grep '&'")
     return 0
 
 if __name__ == "__main__":

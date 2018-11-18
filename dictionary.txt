@@ -1,0 +1,16 @@
+personal_ws-1.1 en 0
+Verilog
+Digilent
+Vivado
+Xilinx
+Nexys
+Artix
+FPGA
+sigrok
+PulseView
+DDR
+UART
+GitHub
+RTL
+pandoc
+LaTeX
