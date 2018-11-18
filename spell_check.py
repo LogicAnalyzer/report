@@ -4,8 +4,8 @@ Spell Check script using aspell and python unit tests
 import os
 import sys
 import argparse
-import unittest
 import subprocess
+from junit_xml import TestSuite, TestCase
 
 def argument_parser():
     ''' Argument parser for documentation generation script '''
@@ -29,7 +29,7 @@ def get_list_of_markdown_files():
 
 def check_spelling_in_file(file, dictionary):
     print_file = "cat ./" + file
-    check_file = "aspell -a --extra-dicts ./" + dictionary + " | grep -v '\*'"
+    check_file = "aspell -a --extra-dicts ./" + dictionary 
 
     p1 = subprocess.Popen(print_file, stdout=subprocess.PIPE, shell=True)
     p2 = subprocess.Popen(check_file, stdin=p1.stdout, stdout=subprocess.PIPE, shell=True)
@@ -47,14 +47,16 @@ def main():
     ''' Main function of spell_check.py'''
     args = argument_parser()
     files = get_list_of_markdown_files()
-    all_mistakes = {}
+    all_mistakes = []
     for file in files:
         spelling_mistakes = check_spelling_in_file(file, args.dictionary)
         if spelling_mistakes is not None:
-            all_mistakes[file] = spelling_mistakes
-    print(all_mistakes)
+            for mistake in spelling_mistakes:
+                all_mistakes.append(TestCase(file, mistake[0], 0, mistake[1], mistake[2].strip(':')))
+    ts = TestSuite("Spell Check", all_mistakes)
+    with open(args.output, 'w') as f:
+        TestSuite.to_file(f, [ts], prettyprint=False)
+
 
 if __name__ == "__main__":
     main()
-    #import xmlrunner
-    #unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))

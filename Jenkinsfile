@@ -8,8 +8,8 @@ pipeline{
 		}
 		stage("Spell Check"){
 			steps{
-				sh 'python3 spell_check.py'
-				junit '*.xml'
+				sh 'python3 spell_check.py -d dictionary.txt -o spell_check.xml'
+				junit 'spell_check.xml'
 			}
 		}
 		stage("Create PDF"){

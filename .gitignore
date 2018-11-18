@@ -6,4 +6,6 @@
 tex2pdf/*
 *.pdf
 .vscode/
-*.log
+*.lo
+i
+*.xml
