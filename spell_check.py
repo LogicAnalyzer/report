@@ -52,8 +52,8 @@ def main():
         spelling_mistakes = check_spelling_in_file(file, args.dictionary)
         if spelling_mistakes is not None:
             for mistake in spelling_mistakes:
-                tc = TestCase(classname=file, name=mistake[0], line=mistake[1], file=file)
-                tc.add_failure_info(message="" + mistake[0] + " is probably mispelled")
+                tc = TestCase(name=file, line=mistake[1], file=file)
+                tc.add_failure_info(message="" + mistake[0] + " is probably mispelled\nLine: " + mistake[1])
                 all_mistakes.append(tc)
     ts = TestSuite("Spell Check", all_mistakes)
     with open(args.output, 'w') as f:
