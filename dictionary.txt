@@ -41,3 +41,7 @@ EZ
 bitstream
 SPI
 testbench
+xUnit
+Cocotb
+bitstreams
+DSLogic
