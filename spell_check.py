@@ -53,7 +53,7 @@ def main():
         if spelling_mistakes is not None:
             failure_message = []
             for mistake in spelling_mistakes:
-                failure_message.append("[" + mistake[1] + "][" + mistake[2].strip(':') + "]: " + mistake[0] + " is probably mispelled.")
+                failure_message.append("Line " + mistake[1] + ": " + mistake[0] + " is probably misspelled.")
             tc = TestCase(name=file, file=file)
             tc.add_failure_info(message="\n".join(failure_message))
             all_mistakes.append(tc)
