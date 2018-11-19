@@ -63,6 +63,7 @@ wr
 sel
 CMD
 XXXX
+XXXXXXXX
 DLYCNT
 parameterized
 trigRising
@@ -83,3 +84,7 @@ pre
 cmd
 CLKS
 DUT
+tran
+deassert
+deasserted
+TODO

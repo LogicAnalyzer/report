@@ -57,6 +57,8 @@ def parse_spelling_mistakes(spelling_mistakes, extra_dictionary):
     aspell. aspell doesn't support apostrophes or numbers in the word. That
     is why we need two dictionaries.
     '''
+    if spelling_mistakes is None:
+        return None
     words = []
     with open(extra_dictionary) as file:
         words = [line.strip() for line in file]
@@ -72,7 +74,6 @@ def parse_spelling_mistakes(spelling_mistakes, extra_dictionary):
 def generate_test_case(spelling_mistakes, file):
     ''' Create a test case for all of the mistakes in a file '''
     test_case = TestCase(name=file)
-    print(file)
     if spelling_mistakes is not None:
         error_message = "Mispelled words:\n"
         words = []
@@ -81,9 +82,6 @@ def generate_test_case(spelling_mistakes, file):
                 words.append(mistake[0])
         error_message = error_message + ", ".join(words)
         test_case.add_error_info(message=error_message)
-        print(words)
-    else:
-        print("None")
     return test_case
 
 
@@ -101,9 +99,8 @@ def main():
     test_cases = []
     for file in files:
         spelling_mistakes = check_spelling_in_file(file, args.dictionary)
-        if spelling_mistakes is not None:
-            spelling_mistakes = parse_spelling_mistakes(spelling_mistakes,
-                                                        args.extra_dictionary)
+        spelling_mistakes = parse_spelling_mistakes(spelling_mistakes,
+                                                    args.extra_dictionary)
         test_cases.append(generate_test_case(spelling_mistakes, file))
     generate_test_output(test_cases, args.output)
 
