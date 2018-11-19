@@ -23,7 +23,7 @@ Hardware verification is required due to the fact that hardware does not always 
 
 After extensive unit testing of individual Verilog modules, a final top level test was built to simulate communication from a PC host to initiate a capture. Sample input data was generated for the simulation at random. By monitoring internal modules, verification of proper functionality was observed, leading the way to hardware validation.
 
-Hardware validation was performed by attaching leads from the PMODs on the Nexys4 DDR to pins on a SJOne development board. The SJOne board has at its core has LPC1758 CPU along with many on board components, including a SPI FLASH memory module. Hardware validation was accomplished by generating transfers of data from the SJOne board and confirming through sigrok’s decoder that the correct data was being transferred.  
+Hardware validation was performed by attaching leads from the PMODs on the Nexys4 DDR to pins on a SJOne development board. The SJOne board has at its core has LPC1758 CPU along with many on board components, including a SPI FLASH memory module. Hardware validation was accomplished by generating transfers of data from the SJOne board and confirming through the sigrok decoder that the correct data was being transferred.  
 
 
 ## Testing and Experiment Results and Analysis ##
