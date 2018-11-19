@@ -37,7 +37,7 @@ Vivado is Xilinx's integrated development environment which is used to develop f
 
 #### Logic Analyzer ####
 
-In order to test our own logic analyzer out, we needed to test it against a known working logic analyzer and compare the input results. We used two other open source logic analyzers to accomplish this, the Open Bench Logic Sniffer and the DSLogic Pro. Both of these devices work with Sigrok which means we were able to test all three at the same time. This made it much easier to track down issues in our design.
+In order to test our own logic analyzer out, we needed to test it against a known working logic analyzer and compare the input results. We used two other open source logic analyzers to accomplish this, the Open Bench Logic Sniffer and the DSLogic Pro. Both of these devices work with sigrok which means we were able to test all three at the same time. This made it much easier to track down issues in our design.
 
 #### Oscilloscope ####
 

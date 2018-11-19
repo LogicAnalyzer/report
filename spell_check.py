@@ -23,12 +23,12 @@ def argument_parser():
 
 def get_list_of_markdown_files():
     ''' Get a list of all markdown files used in the report '''
-    diagrams = []
+    found_files = []
     for root, dirs, files in os.walk("."):
         for file in files:
             if file.endswith(".md"):
-                diagrams.append(os.path.join(root, file).lstrip("./"))
-    return diagrams
+                found_files.append(os.path.join(root, file).lstrip("./"))
+    return found_files
 
 
 def check_spelling_in_file(file, dictionary):
@@ -64,14 +64,15 @@ def parse_spelling_mistakes(spelling_mistakes, extra_dictionary):
     for mistake in spelling_mistakes:
         if mistake[0] not in words:
             mistakes_to_return.append(mistake)
-        else:
-            print(mistake)
-    return mistakes_to_return
+    if mistakes_to_return.__len__():
+        return mistakes_to_return
+    return None
 
 
 def generate_test_case(spelling_mistakes, file):
     ''' Create a test case for all of the mistakes in a file '''
     test_case = TestCase(name=file)
+    print(file)
     if spelling_mistakes is not None:
         error_message = "Mispelled words:\n"
         words = []
@@ -80,6 +81,9 @@ def generate_test_case(spelling_mistakes, file):
                 words.append(mistake[0])
         error_message = error_message + ", ".join(words)
         test_case.add_error_info(message=error_message)
+        print(words)
+    else:
+        print("None")
     return test_case
 
 

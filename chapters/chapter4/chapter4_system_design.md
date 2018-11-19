@@ -10,7 +10,7 @@ The centerpiece of the project is the Xilinx Artix-7 FPGA. This device performs 
 
 The microcontroller is the next major piece of hardware in the design. The Cypress FX-3 microcontroller  This ability to update the firmware is fundamental to the open source principles this project is based on allowing users to improve upon the initial design we release.
 
-The final part of the system architecture is the PC user interface which will be displayed on the open source signal UI Sigrok. In order to be displayed on sigrok, the USB data transfer has to go through a middleware to parse the data to allow Sigrok to display it.
+The final part of the system architecture is the PC user interface which will be displayed on the open source signal UI sigrok. In order to be displayed on sigrok, the USB data transfer has to go through a middleware to parse the data to allow sigrok to display it.
 
 ## Interface and Component Design ##
 
@@ -32,7 +32,7 @@ The logic signals coming in from the device under test are immediately sent into
 
 The USB controller hardware takes care of all of the protocol handling required to get the data transferred to the PC, and the drivers provided by the manufacturer for various operating systems handle the receiving of the data packet as well. The way the data is packaged before sending it is the way the data comes out on the host machine. The data is then sent to an interface driver that converts the data into signals readable by sigrok.
 
-The data translation is well laid out in Sigrok's documentation. We also have a separate control program that interfaces with sigrok and pulseView that allows us to set up acquisition and trigger settings in the software and request a capture. These functions are all done inside of pulseView, facilitated by our custom interface driver. 
+The data translation is well laid out in sigrok's documentation. We also have a separate control program that interfaces with sigrok and pulseView that allows us to set up acquisition and trigger settings in the software and request a capture. These functions are all done inside of pulseView, facilitated by our custom interface driver. 
 
 ## Design Constraints, Problems, Trade-offs, and Solutions ##
 
@@ -56,9 +56,9 @@ We decided to support the USB 3.0 protocol which allowed us to communicate with 
 
 We chose to target the sampling speed of 100 MHz because that is what similar devices on the market have achieved with similar hardware. We looked into supporting higher sampling speeds such as 500 MHz, but if we were going to support these speeds, we would need to design a much more robust system. Also, the components we would need to use would be more expensive.
 
-We decided to design our project around the Xilinx Artix-7 and the Cypress FX-3 due to their low costs with the features that we need. We also all had a Xilinx Artix-7 Development board that we used for our course work at San Jose State. The Artix-7 is one of Xilinx's value optimized FPGA's, which gave us a lot of performance for a relatively low per unit price. Using a Xilinx FPGA also allowed us to use many of Xilinx's IPs right out of the box, without having to write our own from scratch. We did look into using other FPGA manufacturers, but none of them had a product that was close to the performance of our Artix-7 for the price were aiming to achieve.
+We decided to design our project around the Xilinx Artix-7 and the Cypress FX-3 due to their low costs with the features that we need. We also all had a Xilinx Artix-7 Development board that we used for our course work at San Jose State. The Artix-7 is one of Xilinx's value optimized FPGAs, which gave us a lot of performance for a relatively low per unit price. Using a Xilinx FPGA also allowed us to use many of Xilinx's IPs right out of the box, without having to write our own from scratch. We did look into using other FPGA manufacturers, but none of them had a product that was close to the performance of our Artix-7 for the price were aiming to achieve.
 
-The Cypress FX-3 is another important pillar of our design, allowing for USB 3.0 communication. We chose the FX-3 in particular because we were unable find any other USB 3.0 peripheral controllers that also had as much documentation and application notes as the FX-3 had. We also couldn’t find a competitor that could compete on price. While the cost of this controller is high in comparison to USB 2.0 controllers, it is still significantly less than other USB 3.0 controllers.
+The Cypress FX-3 is another important pillar of our design, allowing for USB 3.0 communication. We chose the FX-3 in particular because we were unable find any other USB 3.0 peripheral controllers that also had as much documentation and application notes as the FX-3 had. We also could not find a competitor that could compete on price. While the cost of this controller is high in comparison to USB 2.0 controllers, it is still significantly less than other USB 3.0 controllers.
 
 In terms of keeping component costs down and choosing components that will be readily available, choosing the Artix-7 and FX-3 were easy decisions. They are the some of the lowest cost options in their markets and neither of them are marked as end of life. We also made sure to check component suppliers such as Digikey and Mouser to make sure that there are sufficient quantities available for purchase.
 
