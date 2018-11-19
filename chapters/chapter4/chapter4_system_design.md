@@ -20,7 +20,7 @@ The design of most logic analyzers is relatively linear. Data comes in, gets pro
 
 ![Interface Design](images/flow_diagram.png){width=50%}
 
-The right column of our interface design diagram shows the software components that we used to get the signals to display on Pulseview after getting them from our device. The middle column shows the hardware and software components needed to read in the logic signals and send the data the computer. Objects in blue are components that we designed and objects in green are components that are provided through third party software, or from our hardware manufacturers. 
+The right column of our interface design diagram shows the software components that we used to get the signals to display on pulseView after getting them from our device. The middle column shows the hardware and software components needed to read in the logic signals and send the data the computer. Objects in blue are components that we designed and objects in green are components that are provided through third party software, or from our hardware manufacturers. 
 
 ## Structure and Logic Design ##
 
@@ -32,7 +32,7 @@ The logic signals coming in from the device under test are immediately sent into
 
 The USB controller hardware takes care of all of the protocol handling required to get the data transferred to the PC, and the drivers provided by the manufacturer for various operating systems handle the receiving of the data packet as well. The way the data is packaged before sending it is the way the data comes out on the host machine. The data is then sent to an interface driver that converts the data into signals readable by sigrok.
 
-The data translation is well laid out in Sigrok's documentation. We also have a separate control program that interfaces with sigrok and pulseview that allows us to set up acquisition and trigger settings in the software and request a capture. These functions are all done inside of pulseview, facilitated by our custom interface driver. 
+The data translation is well laid out in Sigrok's documentation. We also have a separate control program that interfaces with sigrok and pulseView that allows us to set up acquisition and trigger settings in the software and request a capture. These functions are all done inside of pulseView, facilitated by our custom interface driver. 
 
 ## Design Constraints, Problems, Trade-offs, and Solutions ##
 
@@ -56,10 +56,10 @@ We decided to support the USB 3.0 protocol which allowed us to communicate with 
 
 We chose to target the sampling speed of 100 MHz because that is what similar devices on the market have achieved with similar hardware. We looked into supporting higher sampling speeds such as 500 MHz, but if we were going to support these speeds, we would need to design a much more robust system. Also, the components we would need to use would be more expensive.
 
-We decided to design our project around the Xilinx Artix-7 and the Cypress FX-3 due to their low costs with the features that we need. We also all had a Xilinx Artix-7 Development board that we used for our course work at San Jose State. The Artix-7 is one of Xilinx’s value optimized FPGA's, which gave us a lot of performance for a relatively low per unit price. Using a Xilinx FPGA also allowed us to use many of Xilinx's IPs right out of the box, without having to write our own from scratch. We did look into using other FPGA manufacturers, but none of them had a product that was close to the performance of our Artix-7 for the price were aiming to achieve.
+We decided to design our project around the Xilinx Artix-7 and the Cypress FX-3 due to their low costs with the features that we need. We also all had a Xilinx Artix-7 Development board that we used for our course work at San Jose State. The Artix-7 is one of Xilinx's value optimized FPGA's, which gave us a lot of performance for a relatively low per unit price. Using a Xilinx FPGA also allowed us to use many of Xilinx's IPs right out of the box, without having to write our own from scratch. We did look into using other FPGA manufacturers, but none of them had a product that was close to the performance of our Artix-7 for the price were aiming to achieve.
 
 The Cypress FX-3 is another important pillar of our design, allowing for USB 3.0 communication. We chose the FX-3 in particular because we were unable find any other USB 3.0 peripheral controllers that also had as much documentation and application notes as the FX-3 had. We also couldn’t find a competitor that could compete on price. While the cost of this controller is high in comparison to USB 2.0 controllers, it is still significantly less than other USB 3.0 controllers.
 
 In terms of keeping component costs down and choosing components that will be readily available, choosing the Artix-7 and FX-3 were easy decisions. They are the some of the lowest cost options in their markets and neither of them are marked as end of life. We also made sure to check component suppliers such as Digikey and Mouser to make sure that there are sufficient quantities available for purchase.
 
-For the tools we will be using in this project, we used Xilinx’s free Vivado development environment to develop for the Artix-7 and to develop for the Cypress FX-3, we used Cypress’s free EZ-USB suite. There are no real alternative for either of these suites and we had to use them to develop for our chosen components. We cannot guarantee that these tools will be available in the future, but we can assume that they will continue to be available and free as long as these companies exist.
+For the tools we will be using in this project, we used Xilinx's free Vivado development environment to develop for the Artix-7 and to develop for the Cypress FX-3, we used Cypress’s free EZ-USB suite. There are no real alternative for either of these suites and we had to use them to develop for our chosen components. We cannot guarantee that these tools will be available in the future, but we can assume that they will continue to be available and free as long as these companies exist.

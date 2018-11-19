@@ -45,7 +45,7 @@
 
 |The device SHOULD…|
 |-----------|
-|Capture signals at a speeds up to  200Mhz|
+|Capture signals at a speeds up to  200MHz|
 |The logic analyzer SHOULD implement communication to a host PC using USB 2.0 or USB 3.0|
 |Be open source compliant|
 |Have software written for it that is clear, well written, and maintainable for future open-sourced work|

@@ -28,4 +28,4 @@ Our current design only supports 8 channels, but our design can easily be expand
 
 ### 250 MHz ###
 
-The current sample rate of our logic analyzer is capped at 100MHz. We would like to increase the maximum speed to at least 250MHz to allow us to capture some of the high speed bus signals currently used in embedded systems. This would give our logic analyzer a feature that is currentlty not in the open-source market. 
+The current sample rate of our logic analyzer is capped at 100MHz. We would like to increase the maximum speed to at least 250MHz to allow us to capture some of the high speed bus signals currently used in embedded systems. This would give our logic analyzer a feature that is currently not in the open-source market. 

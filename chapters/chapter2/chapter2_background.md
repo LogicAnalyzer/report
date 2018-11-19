@@ -8,7 +8,7 @@ While going through our course work at San Jose State, we have used logic analyz
 
 | Course 									| Description | 
 | --- 										| ------- |
-| Digital Design I 							| This course taught us the basics of digital logic and was heavily hands on. This was also our first experiece using logic analyzers. |
+| Digital Design I 							| This course taught us the basics of digital logic and was heavily hands on. This was also our first experience using logic analyzers. |
 | Digital Design II 						| This course was our first Verilog course which introduced us to our development board, as well as the concepts of RTL design. |
 | Computer Architecture and Design 			| This was our capstone RTL design course, having us create a reduced instruction set MIPS I CPU from scratch. |
 | Microprocessor Design 					| This course was our first Microprocessor course, where we spent hands on time interfacing with a microprocessor. During this time we started to notice the downfalls of current logic analyzers on the market.|

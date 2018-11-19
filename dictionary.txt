@@ -7,7 +7,7 @@ Nexys
 Artix
 FPGA
 sigrok
-PulseView
+pulseView
 DDR
 UART
 GitHub
@@ -47,3 +47,9 @@ SJOne
 LPC
 datavalid
 libsigrok
+UML
+UI
+FPGAs
+viewable
+waveforms
+special ' -*-
