@@ -51,10 +51,12 @@ def main():
     for file in files:
         spelling_mistakes = check_spelling_in_file(file, args.dictionary)
         if spelling_mistakes is not None:
+            failure_message = []
             for mistake in spelling_mistakes:
-                tc = TestCase(name=file, line=mistake[1], file=file)
-                tc.add_failure_info(message="" + mistake[0] + " is probably mispelled\nLine: " + mistake[1])
-                all_mistakes.append(tc)
+                failure_message.append("[" + mistake[1] + "][" + mistake[2].strip(':') + "]: " + mistake[0] + " is probably mispelled.")
+            tc = TestCase(name=file, file=file)
+            tc.add_failure_info(message="\n".join(failure_message))
+            all_mistakes.append(tc)
     ts = TestSuite("Spell Check", all_mistakes)
     with open(args.output, 'w') as f:
         TestSuite.to_file(f, [ts], prettyprint=False)
