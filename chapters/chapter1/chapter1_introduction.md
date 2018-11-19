@@ -14,7 +14,7 @@ The second main feature of the this project is to be fully open sourced. This me
 
 <!-- [Describe the problem, motivation, and needs of your project. You need to address why this project is important and what is the problem you have addressed.] -->
 
-Logic analyzers are an important tool used in hardware development. Currently there is one market leader in the low cost USB logic analyzer sector and they recently doubled the prices of all their products. There are several open source logic analyzer projects available, but those also have their own set of problems. The most recent open source logic analyzer design is poorly documented and doesn’t provide the necessary files to manufacture the product. Other popular projects are much older and use hardware that has become obsolete. While the logic analyzer portion is still functions, the hardware design could be improved with more modern components and interfaces.
+Logic analyzers are an important tool used in hardware development. Currently there is one market leader in the low cost USB logic analyzer sector and they recently doubled the prices of all their products. There are several open source logic analyzer projects available, but those also have their own set of problems. The most recent open source logic analyzer design is poorly documented and does not provide the necessary files to manufacture the product. Other popular projects are much older and use hardware that has become obsolete. While the logic analyzer portion is still functions, the hardware design could be improved with more modern components and interfaces.
 
 ## Project Application and Impact ##
 

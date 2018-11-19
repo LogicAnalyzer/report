@@ -18,7 +18,7 @@ Many open source projects are hosted on GitHub, and it made sense to also use th
 
 #### Cocotb ####
 
-In order to verify our RTL design on the FPGA, we used an open source unit testing framework. This unit testing framework allowed us to write our tests in python and directly interface with our Verilog design files. The results of the tests are output in a standard xUnit xml format, which can be parsed by many testing software suites.
+In order to verify our RTL design on the FPGA, we used an open source unit testing framework. This unit testing framework allowed us to write our tests in python and directly interface with our Verilog design files. The results of the tests are output in a standard xUnit XML format, which can be parsed by many testing software suites.
 
 #### Icarus Verilog ####
 
