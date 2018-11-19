@@ -38,3 +38,6 @@ FPGA's
 IPs
 Digikey
 EZ
+bitstream
+SPI
+testbench
