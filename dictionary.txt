@@ -45,3 +45,8 @@ xUnit
 Cocotb
 bitstreams
 DSLogic
+metastable
+PMODs
+SJOne
+LPC
+datavalid

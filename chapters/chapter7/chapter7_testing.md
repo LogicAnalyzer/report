@@ -14,7 +14,7 @@ The testing plan for the project was broken into three focal areas: unit testing
 ### Verilog Modules ###
 
 The verilog testing followed the standard RTL testing method. First a testbench is written for functional verification of the module then the module is synthesized and tested on an FPGA. This testing method was done for every major module through each layer of abstraction. This starts at a unit level test and moves up to the full chip test. Modules with a small amount of inputs were tested exhaustively, while modules with a large input set were tested with both directed testing to test edge cases and random testing to increase coverage.
-The functional verification was used to ensure the module acted as expected in every case it might be in. With FPGA’s the turnaround time from changing code to a uploading a bitstream onto the board is very large. Using functional verification helps find any bugs in the logic of the module in a much faster way. Functional verification is ran on a hardware simulator hosted on a pc. This simulation allows a testbench to be written to examine all the signals and verify their state. This also provides waveforms that can be used to see the state of the module and the timing each signal changes.
+The functional verification was used to ensure the module acted as expected in every case it might be in. With FPGA’s the turnaround time from changing code to a uploading a bitstream onto the board is very large. Using functional verification helps find any bugs in the logic of the module in a much faster way. Functional verification is ran on a hardware simulator hosted on a PC. This simulation allows a testbench to be written to examine all the signals and verify their state. This also provides waveforms that can be used to see the state of the module and the timing each signal changes.
 Hardware verification is required due to the fact that hardware does not always act the same way as the simulation. With hardware there can be issues with delays, metastable states, or other issues that can arise when running on a non simulated test environment. When the module is in hardware it is much more difficult to debug, so hardware test is not done until functional verification has been brought to a satisfactory level for that module.
 
 <!-- ### PC-to-FPGA Communication ### -->
@@ -44,11 +44,11 @@ UART Transmitter Test Sample Output Showing the last 7 transactions, this is use
 
 ![DDR2 Testbench Waveform](images/ddr2_tb.png){width=75%}
 
-DDR2 testbench waveform - The DDR2 was tested by generating random traffic and ensurring the proper signals were sent and the correct value was stored. 
+DDR2 testbench waveform - The DDR2 was tested by generating random traffic and ensuring the proper signals were sent and the correct value was stored. 
 
 ### Sampler / Trigger Unit Testing ####
 
-The sampler and trigger unit were tested together to assure that frequency divisions of the sampler were successfully being accomplished through the use of the `datavalid` signal, along with proper triggering on a given rising/falling mask. FigureX shows how there is a four cycle delay between when sample data entered the device before the pattern is detected which triggers it.
+The sampler and trigger unit were tested together to assure that frequency divisions of the sampler were successfully being accomplished through the use of the `datavalid` signal, along with proper triggering on a given rising/falling mask. The figure below shows how there is a four cycle delay between when sample data entered the device before the pattern is detected which triggers it.
 
 ![Sampler-Trigger Test Bench Waveform](images/sampler-trigger.png){width=75%}
 
