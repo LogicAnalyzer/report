@@ -8,7 +8,7 @@ The goal of this project was to design and implement a high-speed USB 3.0 logic 
 
 One of the main features of this project is having high-speed data analysis. The projects goal is to achieve accurate analysis of signals up to 100MHz. In order to achieve this goal we accomplished subgoals of high speed data storage, processing, and transmitting. USB 3.0 was also used, allowing faster transfer of data, making it possible to stream at high speeds due to its capability of reaching speeds up to 4.8 megabits per second far exceeding the expected recording speed of the logic analyzer.
 
-The second main feature of the this project is to be fully open sourced. This means barring the market modules used, every tool used and document created is open for view and fair use by the community. This allows the logic analyzer to continue to be maintained and improved in perpetuity. It also allows anyone who wants to reproduce the project to look throught the version history for an understand of why certain design decisions were made.
+The second main feature of the this project is to be fully open sourced. This means barring the market modules used, every tool used and document created is open for view and fair use by the community. This allows the logic analyzer to continue to be maintained and improved in perpetuity. It also allows anyone who wants to reproduce the project to look through the version history for an understand of why certain design decisions were made.
 
 ## Problem and Motivation ##
 
@@ -37,7 +37,7 @@ Low cost, open source hardware tools could decrease costs of products due to les
 A key deliverable is this report. The report includes a thorough and detailed documentation of this project. The report is written in a way to allow a person with no knowledge on the project, but complete industry knowledge to complete the project only using the information contained in the document. The report also allows someone with no knowledge on the current state of the industry for logic analyzers to get a complete understanding through reading the report.
 
 ### Source Code ### 
-All of the source code we wrote, including the USB device driver, sigrok device handler, verilog system implementation and microcontroller software are provided in a Github repository. This source code is both compilable and synthesizable and can be used to program and use our product. We have also provided precompiled binaries for multiple platforms that can be used instead of compiling from source.
+All of the source code we wrote, including the USB device driver, sigrok device handler, Verilog system implementation and microcontroller software are provided in a GitHub repository. This source code is both compilable and synthesizable and can be used to program and use our product. We have also provided precompiled binaries for multiple platforms that can be used instead of compiling from source.
 
 <!-- ### Design Files ###
 We have provided the design files for our printed circuit board as well as the files necessary to manufacture the printed circuit board. We will also provide a complete bill of materials. Our intentions is that anyone can download the files, get the printed circuit board produce, and assemble the device if they wanted to. -->
@@ -52,4 +52,4 @@ We have a prototype of our initial design for review. <!-- This will include a p
 
 <!-- [Introduce the following sections of the document] -->
 
-The following seven chapters go into detail on all of our design choices. Chapter 2 discusses the theory of digital signal sampling, the history of digital signal analyzers, and the current state of the market. Chapter 3 covers the requirments that we believe represent a successful project. Chapter 4 covers the system design and our design choices. Chapter 5 talks about our implementation and the problems we overcame while developing this project. Chapter 6 discusses the tools we used to complete this project. Chapter 7 talks about our testing and verification. Chapter 8 is our conclusion to this project and what we have learned.
+The following seven chapters go into detail on all of our design choices. Chapter 2 discusses the theory of digital signal sampling, the history of digital signal analyzers, and the current state of the market. Chapter 3 covers the requirements that we believe represent a successful project. Chapter 4 covers the system design and our design choices. Chapter 5 talks about our implementation and the problems we overcame while developing this project. Chapter 6 discusses the tools we used to complete this project. Chapter 7 talks about our testing and verification. Chapter 8 is our conclusion to this project and what we have learned.

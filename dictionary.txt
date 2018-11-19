@@ -14,3 +14,11 @@ GitHub
 RTL
 pandoc
 LaTeX
+macOS
+tex2pdf
+subgoals
+microcontroller
+compilable
+synthesizable
+deliverables
+precompiled
