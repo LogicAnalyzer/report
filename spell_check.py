@@ -2,7 +2,6 @@
 Spell Check script using aspell and python unit tests
 '''
 import os
-import sys
 import argparse
 import subprocess
 from junit_xml import TestSuite, TestCase
@@ -12,7 +11,12 @@ def argument_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("-o", "--output", default="results.xml")
     parser.add_argument("-v", "--verbosity", action="store_true")
-    parser.add_argument("-d", "--dictionary", help="Dictionary of corrections")
+    parser.add_argument("-d", "--dictionary", default="dictionary.txt",
+                        help="Dictionary of corrections used by aspell")
+    parser.add_argument("-e", "--extra-dictionary",
+                        default="extra_dictionary.txt",
+                        help="Spelling mistakes that can't be overwritten \
+                             using aspell dictionary")
     args = parser.parse_args()
     return args
 
@@ -28,13 +32,16 @@ def get_list_of_markdown_files():
 
 
 def check_spelling_in_file(file, dictionary):
+    ''' Run the file through aspell and capture the spelling mistakes'''
     print_file = "cat ./" + file
-    check_file = "aspell -a --extra-dicts ./" + dictionary 
+    check_file = "aspell -a --extra-dicts ./" + dictionary
 
-    p1 = subprocess.Popen(print_file, stdout=subprocess.PIPE, shell=True)
-    p2 = subprocess.Popen(check_file, stdin=p1.stdout, stdout=subprocess.PIPE, shell=True)
-    p1.stdout.close()  # Allow p1 to receive a SIGPIPE if p2 exits.
-    output = p2.communicate()[0]
+    pipe_1 = subprocess.Popen(print_file, stdout=subprocess.PIPE,
+                              shell=True)
+    pipe_2 = subprocess.Popen(check_file, stdin=pipe_1.stdout,
+                              stdout=subprocess.PIPE, shell=True)
+    pipe_1.stdout.close()
+    output = pipe_2.communicate()[0]
     return_list = []
     for line in output.decode("utf-8").split("\n"):
         if line.startswith("&"):
@@ -43,24 +50,54 @@ def check_spelling_in_file(file, dictionary):
         return return_list
 
 
+def parse_spelling_mistakes(spelling_mistakes, extra_dictionary):
+    '''
+    Parse the output of the spelling aspell mistakes for common issuses with
+    aspell. aspell doesn't support apostrophes or numbers in the word. That
+    is why we need two dictionaries.
+    '''
+    words = []
+    with open(extra_dictionary) as file:
+        words = [line.strip() for line in file]
+    for mistake in spelling_mistakes:
+        if mistake[0] in words:
+            spelling_mistakes.remove(mistake)
+    return spelling_mistakes
+
+
+def generate_test_case(spelling_mistakes, file):
+    ''' Create a test case for all of the mistakes in a file '''
+    test_case = TestCase(name=file)
+    if spelling_mistakes is not None:
+        error_message = "Mispelled words:\n"
+        words = []
+        for mistake in spelling_mistakes:
+            if mistake[0] not in words:
+                words.append(mistake[0])
+        error_message = error_message + ", ".join(words)
+        test_case.add_error_info(message=error_message)
+    return test_case
+
+
+def generate_test_output(test_cases, test_output):
+    ''' Compile all of the test cases and output a junit test report '''
+    test_suite = TestSuite("Spell Check", test_cases)
+    with open(test_output, 'w') as file:
+        TestSuite.to_file(file, [test_suite], prettyprint=False)
+
+
 def main():
     ''' Main function of spell_check.py'''
     args = argument_parser()
     files = get_list_of_markdown_files()
-    all_mistakes = []
+    test_cases = []
     for file in files:
         spelling_mistakes = check_spelling_in_file(file, args.dictionary)
         if spelling_mistakes is not None:
-            failure_message = []
-            for mistake in spelling_mistakes:
-                failure_message.append("Line " + mistake[1] + ": " + mistake[0] + " is probably misspelled.")
-            tc = TestCase(name=file, file=file)
-            tc.add_failure_info(message="\n".join(failure_message))
-            all_mistakes.append(tc)
-    ts = TestSuite("Spell Check", all_mistakes)
-    with open(args.output, 'w') as f:
-        TestSuite.to_file(f, [ts], prettyprint=False)
-
+            spelling_mistakes = parse_spelling_mistakes(spelling_mistakes,
+                                                        args.extra_dictionary)
+        test_cases.append(generate_test_case(spelling_mistakes, file))
+    generate_test_output(test_cases, args.output)
 
 if __name__ == "__main__":
     main()
