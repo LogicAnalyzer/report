@@ -1,4 +1,3 @@
 Xilinx's
-Sigrok's
-FPGA's
+sigrok's
 tex2pdf

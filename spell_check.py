@@ -45,9 +45,10 @@ def check_spelling_in_file(file, dictionary):
     return_list = []
     for line in output.decode("utf-8").split("\n"):
         if line.startswith("&"):
-            return_list.append(line.split()[1:4])
+            return_list.append(line.split()[1:])
     if return_list.__len__():
         return return_list
+    return None
 
 
 def parse_spelling_mistakes(spelling_mistakes, extra_dictionary):
@@ -59,10 +60,13 @@ def parse_spelling_mistakes(spelling_mistakes, extra_dictionary):
     words = []
     with open(extra_dictionary) as file:
         words = [line.strip() for line in file]
+    mistakes_to_return = []
     for mistake in spelling_mistakes:
-        if mistake[0] in words:
-            spelling_mistakes.remove(mistake)
-    return spelling_mistakes
+        if mistake[0] not in words:
+            mistakes_to_return.append(mistake)
+        else:
+            print(mistake)
+    return mistakes_to_return
 
 
 def generate_test_case(spelling_mistakes, file):
