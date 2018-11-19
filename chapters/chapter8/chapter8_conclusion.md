@@ -1,6 +1,6 @@
 # Conclusions and Future Work #
 
-We learned a lot from this project. Some of the biggest take aways were project management and scope. We originally had lofty goals for our project that required more time and effort than we had available during our last year at San Jose State University. We also decided that we wanted to create something that we were proud of, and chose difficult to implement features that would be difficult for 
+We learned a lot from this project. Some of the biggest takeaways were project management and scope. We originally had lofty goals for our project that required more time and effort than we had available during our last year at San Jose State University. We also decided that we wanted to create something that we were proud of, and chose difficult to implement features that would be difficult for 
 
 ## Future Work ##
 
@@ -8,15 +8,15 @@ There were many features that we would have liked to make it into our final proj
  
 ### Run Length Encoding ###
 
-Run length encoding is a technique used to store more data in a fixed ammount of space. It leverages a simple compression algorithm that can signicant increase the number of samples for signals that are far apart. This feature wouild have been nice to implement to use even more of our available resources and support a feature that is available in sigrok.
+Run length encoding is a technique used to store more data in a fixed amount of space. It leverages a simple compression algorithm that can significant increase the number of samples for signals that are far apart. This feature would have been nice to implement to use even more of our available resources and support a feature that is available in sigrok.
 
 ### DD2/DD3 ###
 
-Our development board has a DD2 memory chip onboard and it would have been nice to actually leverage the power of that chip for our project. We originally set out to use that memory for our project, and spent a lot of time trying to implement simple demos, but ultimately gave up and started to work on the more important aspects of the project. We never got back around to implemeting DDR support and that is something that would really differentiate our logic analyzer from others on the market.
+Our development board has a DD2 memory chip on board and it would have been nice to actually leverage the power of that chip for our project. We originally set out to use that memory for our project, and spent a lot of time trying to implement simple demos, but ultimately gave up and started to work on the more important aspects of the project. We never got back around to implementing DDR support and that is something that would really differentiate our logic analyzer from others on the market.
 
 ### Pull request into libsigrok ###
 
-We spent a lot of time and effort writing a hardware driver for our logic analyzer to interface with libsigrok. We would like to get our code in a state to submit a patch to the sigrok team to get our hardware driver into the mainline codebase for sigrok. 
+We spent a lot of time and effort writing a hardware driver for our logic analyzer to interface with libsigrok. We would like to get our code in a state to submit a patch to the sigrok team to get our hardware driver into the mainline code base for sigrok. 
 
 ### PCB design ###
 
@@ -28,4 +28,4 @@ Our current design only supports 8 channels, but our design can easily be expand
 
 ### 250 MHz ###
 
-The current sample rate of our logic analyzer is capped at 100MHz. We would like to increase the maximum speed to at least 250MHz to allow us to capture some of the high speed bus signals currently used in embedded systems. This would give our logic analyzer a feature that is currenlty not in the open-source market. 
+The current sample rate of our logic analyzer is capped at 100MHz. We would like to increase the maximum speed to at least 250MHz to allow us to capture some of the high speed bus signals currently used in embedded systems. This would give our logic analyzer a feature that is currentlty not in the open-source market. 

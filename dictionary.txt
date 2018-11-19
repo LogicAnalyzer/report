@@ -50,3 +50,4 @@ PMODs
 SJOne
 LPC
 datavalid
+libsigrok
