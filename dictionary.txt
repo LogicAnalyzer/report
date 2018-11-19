@@ -31,9 +31,6 @@ MHz
 HDL
 middleware
 CPUs
-Sigrok's
-Xilinx’s
-FPGA's
 IPs
 Digikey
 EZ
