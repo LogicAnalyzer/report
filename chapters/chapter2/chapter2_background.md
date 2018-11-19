@@ -2,13 +2,13 @@
 
 ## Background and Technologies ##
 
-<!-- [Provide the necessary background of this project, including concepts and knowledge (e.g design patterns, asynchronous programming, project estimation, scientific and mathematical theories), along with technologies (e.g. PhP, MySql). In addition, provide an updated table of courses you have taken that you applied to the project and how you applied them.] -->
+<!-- [Provide the necessary background of this project, including concepts and knowledge (e.g design patterns, asynchronous programming, project estimation, scientific and mathematical theories), along with technologies (e.g. PHP, MySQL). In addition, provide an updated table of courses you have taken that you applied to the project and how you applied them.] -->
 
-While going through our course work at San Jose State, we have used logic analyzers for various projects and assignments. We were not satisfied with the performance and user exeperience with any of the analyzered we used, so we decided it would be a good project to build our own to our specifications.
+While going through our course work at San Jose State, we have used logic analyzers for various projects and assignments. We were not satisfied with the performance and user experience with any of the analyzers we used, so we decided it would be a good project to build our own to our specifications.
 
 | Course 									| Description | 
 | --- 										| ------- |
-| Digital Design I 							| This course taugh us the basics of digital logic and was heavily hands on. This was also our first experice using logic analyzers. |
+| Digital Design I 							| This course taught us the basics of digital logic and was heavily hands on. This was also our first experiece using logic analyzers. |
 | Digital Design II 						| This course was our first Verilog course which introduced us to our development board, as well as the concepts of RTL design. |
 | Computer Architecture and Design 			| This was our capstone RTL design course, having us create a reduced instruction set MIPS I CPU from scratch. |
 | Microprocessor Design 					| This course was our first Microprocessor course, where we spent hands on time interfacing with a microprocessor. During this time we started to notice the downfalls of current logic analyzers on the market.|

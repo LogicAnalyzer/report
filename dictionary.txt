@@ -22,3 +22,9 @@ compilable
 synthesizable
 deliverables
 precompiled
+PHP
+MySQL
+UVM
+SystemVerilog
+FX
+Nyquist
