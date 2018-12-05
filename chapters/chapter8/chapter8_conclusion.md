@@ -8,7 +8,7 @@ There were many features that we would have liked to make it into our final proj
  
 ### USB 3.0 ###
 
-Our original intent was to get USB 3.0 communciation working with our project, but other aspects of the proejct took longer than expected. The first thing that we want to add to this project in the future is the USB 3.0 interface that we worked on before switching over to just implementing and testing the logic analyzer. 
+Our original intent was to get USB 3.0 communication working with our project, but other aspects of the project took longer than expected. The first thing that we want to add to this project in the future is the USB 3.0 interface that we worked on before switching over to just implementing and testing the logic analyzer. 
 
 ### Run Length Encoding ###
 
