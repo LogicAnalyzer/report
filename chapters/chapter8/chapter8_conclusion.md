@@ -1,11 +1,15 @@
 # Conclusions and Future Work #
 
-We learned a lot from this project. Some of the biggest takeaways were project management and scope. We originally had lofty goals for our project that required more time and effort than we had available during our last year at San Jose State University. We also decided that we wanted to create something that we were proud of, and chose difficult to implement features that would be difficult for 
+We learned a lot from this project. Some of the biggest takeaways were project management and scope. We originally had lofty goals for our project that required more time and effort than we had available during our last year at San Jose State University. We also decided that we wanted to create something that we were proud of, and chose difficult to implement features that would be difficult for a team of three to complete. 
 
 ## Future Work ##
 
 There were many features that we would have liked to make it into our final project, but due to time we weren't able to implement. The following are in no particular order.
  
+### USB 3.0 ###
+
+Our original intent was to get USB 3.0 communciation working with our project, but other aspects of the proejct took longer than expected. The first thing that we want to add to this project in the future is the USB 3.0 interface that we worked on before switching over to just implementing and testing the logic analyzer. 
+
 ### Run Length Encoding ###
 
 Run length encoding is a technique used to store more data in a fixed amount of space. It leverages a simple compression algorithm that can significant increase the number of samples for signals that are far apart. This feature would have been nice to implement to use even more of our available resources and support a feature that is available in sigrok.
