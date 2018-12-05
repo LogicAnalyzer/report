@@ -88,3 +88,5 @@ tran
 deassert
 deasserted
 TODO
+num
+leds
