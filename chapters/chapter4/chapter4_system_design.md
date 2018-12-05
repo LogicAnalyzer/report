@@ -8,7 +8,7 @@
 
 The centerpiece of the project is the Xilinx Artix-7 FPGA. This device performs an array of tasks required for logic analysis. The FPGA then stores a capture of the input data. 
 
-The microcontroller is the next major piece of hardware in the design. The Cypress FX-3 microcontroller  This ability to update the firmware is fundamental to the open source principles this project is based on allowing users to improve upon the initial design we release.
+<!-- The microcontroller is the next major piece of hardware in the design. The Cypress FX-3 microcontroller  This ability to update the firmware is fundamental to the open source principles this project is based on allowing users to improve upon the initial design we release. -->
 
 The final part of the system architecture is the PC user interface which will be displayed on the open source signal UI sigrok. In order to be displayed on sigrok, the USB data transfer has to go through a middleware to parse the data to allow sigrok to display it.
 

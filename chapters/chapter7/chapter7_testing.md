@@ -67,7 +67,7 @@ The first tests involved testing the device's triggering system, to ensure that 
 
 #### Comparison with Production Device ####
 
-To generate real-world test situations, the SJ One microcontroller was programmed to send out signals through its I2C, UART, and SPI busses. The example program used in the following test was communicating with the SJ One's Flash memory module over SPI. The first image, showing an SPI sample captured in the off-the-shelf DSLogic Pro analyzer, with the second image showing the same capture taken using the ACSP. Both are identical.  
+To generate real-world test situations, the SJ One microcontroller was programmed to send out signals through its I2C, UART, and SPI buses. The example program used in the following test was communicating with the SJ One's Flash memory module over SPI. The first image, showing an SPI sample captured in the off-the-shelf DSLogic Pro analyzer, with the second image showing the same capture taken using the ACSP. Both are identical.  
 
 ![Test Setup](images/validation_setup.png){width=75%}
 
@@ -75,4 +75,4 @@ To generate real-world test situations, the SJ One microcontroller was programme
 
 ![SPI Capture using ACSP analyzer in sigrok](images/SPI_sigrok.png){width=75%}
 
-The device was tested using the signal generator at 50Mhz speeds, however more real-world tested needs to be accomplished using real hardware running at those frequencies. 
+The device was tested using the signal generator at 50MHz speeds, however more real-world tested needs to be accomplished using real hardware running at those frequencies. 
