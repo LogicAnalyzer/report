@@ -53,3 +53,26 @@ The sampler and trigger unit were tested together to assure that frequency divis
 ![Sampler-Trigger Test Bench Waveform](images/sampler-trigger.png){width=75%}
 
 Sampler-Trigger Test Bench showing four rising clock edges between input until trigger (run).
+
+### System Validation ###
+
+Once the sigrok program and the FPGA logic analyzer were built, system validation was necessary and completed successfully using several real-world test cases. 
+
+#### Trigger Validation ####
+The first tests involved testing the device's triggering system, to ensure that triggering across multiple channels was working as intended. To this extent, the ACSP was connected to an 8-channel signal generator where half the signals were reflected, allowing the testing of a wide variety of rising/falling edge combinations.
+
+![Trigger Validation, 8-channel trigger, 100KHz](images/trigger_test_100khz.png){width=75%}
+
+![Trigger Validation, 8-channel trigger, 50MHz](images/trigger_test_50mhz.png){width=75%}
+
+#### Comparison with Production Device ####
+
+To generate real-world test situations, the SJ One microcontroller was programmed to send out signals through its I2C, UART, and SPI busses. The example program used in the following test was communicating with the SJ One's Flash memory module over SPI. The first image, showing an SPI sample captured in the off-the-shelf DSLogic Pro analyzer, with the second image showing the same capture taken using the ACSP. Both are identical.  
+
+![Test Setup](images/validation_setup.png){width=75%}
+
+![Baseline SPI Capture using DSLogic Pro analyzer](images/SPI_baseline.png){width=75%}
+
+![SPI Capture using ACSP analyzer in sigrok](images/SPI_sigrok.png){width=75%}
+
+The device was tested using the signal generator at 50Mhz speeds, however more real-world tested needs to be accomplished using real hardware running at those frequencies. 
