@@ -6,9 +6,9 @@
 
 The goal of this project was to design and implement a high-speed USB 3.0 logic analyzer. All of the design files and source code is released under the MIT open source license. This project was designed to increase the ability of the hobbyist and education market for electronic design testing. In order to impact this sector the price must be kept low while the features of the logic analyzer still compete with incumbent market leaders.
 
-One of the main features of this project is having high-speed data analysis. The projects goal is to achieve accurate analysis of signals up to 100MHz. In order to achieve this goal we accomplished subgoals of high speed data storage, processing, and transmitting. USB 3.0 was also used, allowing faster transfer of data, making it possible to stream at high speeds due to its capability of reaching speeds up to 4.8 megabits per second far exceeding the expected recording speed of the logic analyzer.
+One of the main features of this project is having high-speed data analysis. The projects goal is to achieve accurate analysis of signals up to 100MHz. In order to achieve this goal we accomplished subgoals of high speed data storage and processing. <!-- and transmitting. USB 3.0 was also used, allowing faster transfer of data, making it possible to stream at high speeds due to its capability of reaching speeds up to 4.8 megabits per second far exceeding the expected recording speed of the logic analyzer.-->
 
-The second main feature of the this project is to be fully open sourced. This means barring the market modules used, every tool used and document created is open for view and fair use by the community. This allows the logic analyzer to continue to be maintained and improved in perpetuity. It also allows anyone who wants to reproduce the project to look through the version history for an understand of why certain design decisions were made.
+The second main feature of the this project is to be fully open sourced. This means every tool used and document created is open for view and fair use by the community. This allows the logic analyzer to continue to be maintained and improved in perpetuity. It also allows anyone who wants to reproduce the project to look through the version history for an understand of why certain design decisions were made.
 
 ## Problem and Motivation ##
 
@@ -26,7 +26,7 @@ Providing an open source logic analyzer project could allow for other academic p
 ### Industry ###
 By providing a low cost logic analyzer that is completely free, hardware companies could integrate the logic analyzer into their own products which could aid in faster development times.
 
-### Society ##
+### Society ##s
 Low cost, open source hardware tools could decrease costs of products due to less expensive development costs. Some of these products could be life saving medical devices, safety critical devices, or other devices that require accurate testing. Reducing the cost of testing can reduce the cost of these important systems overall, expanding the impact across communities.
 
 ## Project Results and Deliverables ##
