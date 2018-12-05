@@ -26,7 +26,7 @@ Providing an open source logic analyzer project could allow for other academic p
 ### Industry ###
 By providing a low cost logic analyzer that is completely free, hardware companies could integrate the logic analyzer into their own products which could aid in faster development times.
 
-### Society ##s
+### Society ##
 Low cost, open source hardware tools could decrease costs of products due to less expensive development costs. Some of these products could be life saving medical devices, safety critical devices, or other devices that require accurate testing. Reducing the cost of testing can reduce the cost of these important systems overall, expanding the impact across communities.
 
 ## Project Results and Deliverables ##

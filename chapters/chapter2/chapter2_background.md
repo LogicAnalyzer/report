@@ -20,14 +20,14 @@ Verification methodologies and tools, such as UVM and SystemVerilog, were excell
 
 On the user’s side, the Sigrok interface and system drivers have been created to allow the client computer to recognize and connect via USB to the logic analyzer. The software/hardware integration will be a major hurdle, especially at the target speeds. Initially using standard UART over USB communication on the development board will give us a working model that we will be able to interface to the Cypress FX-3 controller at a later time.
 
-## Literature Search ##
+<!-- ## Literature Search ##
 
 Verification of digital designs requires specialized tools called logic analyzers. Logic analyzers allow for multiple digital signals to be read at the same time which allows for multiple signal communications protocols to be debugged. Through our research, we learned about an important limiting theorem, the Nyquist rate [@Nyquist1928], and how that will determine our maximum data rate. State of the art logic analyzers can read multiple gigabytes of data per second across tens of different digital signals. Our project will not be cutting edge. We will be creating a budget specific, entry-level logic analyzer that will read 16 digital signals and send that signal to a personal computer to be displayed.
 
 Through our research we have found books and articles discussing printed circuit boards, low-voltage high-frequency digital signaling, USB 3.0 test systems, FPGA data acquisition. These articles and books have helped us solidify our understanding of these systems, and we will be using them continuously in the design and implementation of our project. We will inevitably need to research more on specific topics as we get further into the design cycle. 
+-->
 
-
-<!-- [Similarly, present your updated literature search adding to those that you explained in Chapter 1 of 195A workbook.] -->
+<!-- [Similarly, present your updated literature search adding to those that you explained in Chapter 1 of 195A workbook.] --> 
 
 ## State-of-the-art ##
 
@@ -37,4 +37,4 @@ The state of the art logic analyzers used today in industry can capture millions
 
 The products that are competing at the top of the market are being sold for over 50 thousand dollars. This is due to the thousands of engineering hours required to design and implement these high-speed devices, and the extremely low volume that these devices are produced in. The electronics industry uses these devices to measure and test new products and designs. Without these tools, the speed increases that we have seen every year for the past thirty years would have been impossible. New designs must be verified before they are released for production, and as speeds have increased capturing the signal has become more complicated.
 
-The Nyquist-Shannon sampling theorem states in order to accurately read an electronic signal at a given speed, you need to sample that signal at twice the speed. This speed requirement means that the industry needs to have equipment that can capture at least twice the speed they are designing at. This problem becomes a chicken and egg situation, where the current equipment needs to be designed, but it can't be tested with any of the equipment that is currently available.
+The Nyquist-Shannon sampling theorem states in order to accurately read an electronic signal at a given speed, you need to sample that signal at twice the speed[@Nyquist1928]. This speed requirement means that the industry needs to have equipment that can capture at least twice the speed they are designing at. This problem becomes a chicken and egg situation, where the current equipment needs to be designed, but it can't be tested with any of the equipment that is currently available.
