@@ -75,5 +75,4 @@ To generate real-world test situations, the SJ One microcontroller was programme
 
 ![SPI Capture using ACSP analyzer in sigrok](images/SPI_sigrok.png){width=75%}
 
-The device was tested using the signal generator at 50MHz speeds, however more real-world tested needs to be accomplished using real hardware running at those frequencies. 
-s
+The device was tested using the signal generator at 50MHz speeds, however more real-world tested needs to be accomplished using real hardware running at those frequencies.
