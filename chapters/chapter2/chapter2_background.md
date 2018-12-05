@@ -18,7 +18,7 @@ Table: Relevant Courses
 
 Verification methodologies and tools, such as UVM and SystemVerilog, were excellent in testing the many modules required in the FPGA design. They were also useful to help speed the verification process along as development time is extremely short.
 
-On the user’s side, the Sigrok interface and system drivers have been created to allow the client computer to recognize and connect via USB to the logic analyzer. The software/hardware integration will be a major hurdle, especially at the target speeds. Initially using standard UART over USB communication on the development board will give us a working model that we will be able to interface to the Cypress FX-3 controller at a later time.
+On the user’s side, the Sigrok interface and system drivers have been created to allow the client computer to recognize and connect via USB to the logic analyzer. The software/hardware integration will be a major hurdle, especially at the target speeds. Initially using standard UART over USB communication on the development board gave us a working model that we will be able to interface to the Cypress FX-3 controller at a later time.
 
 <!-- ## Literature Search ##
 
