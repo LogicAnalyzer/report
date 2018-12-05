@@ -35,4 +35,84 @@ abstract: |
 
 acknowledgements: Beer
 
+citations: yes
+reference-section-title: References
+link-citations: true
+csl: apa.csl
+
+references:
+- type: article-journal
+  id: Khedkar2017
+  author:
+  - family: Khedkar
+    given: Aboli Audumbar
+  - family: Khade
+    given: R.H.
+  issued:
+    date-parts:
+    - - 2017
+      - 4
+  title: 'High speed FPGA-based data acquisition system. Microprocessors and Microsystems'
+  container-title: Microprocessors and Microsystems
+  volume: 49
+  pages: 87-94
+  DOI: 10.1016/j.micpro.2016.11.006 
+
+- type: article-journal
+  id: Nyquist1928
+  author:
+  - family: Nyquist
+    given: H
+  issued:
+    date-parts:
+    - - 1928
+      - 4
+  title: 'Certain Topics in Telegraph Transmission Theory'
+  container-title: Transactions of the American Institute of Electrical Engineers
+  volume: 47
+  issue: 2
+  pages: 617-644
+  DOI: 10.1109/T-AIEE.1928.5055024
+
+- type: webpage
+  id: sigrok
+  title: Sigrok Project
+  URL: https://sigrok.org
+
+- type: webpage
+  id: digilent
+  title: Digilent Nexys-A7 Reference
+  URL: https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/start
+
+- type: book
+  id: christensen
+  title: Design Of A Logic Analyzer
+  author:
+  - family: Christensen
+    given: Clyde
+  issued:
+    year: 1984
+
+- type: book
+  id: digiscope
+  title: 'DigiScope: a computer displayed digitizing oscilloscope and logic analyzer'
+  author:
+  - family: Brannon
+    given: Daniel
+    middle: J 
+  issued:
+    year: 1999
+
+- type: webpage
+  id: cocotb
+  title: cocotb Testing Framework
+  URL: http://potential.ventures/cocotb/
+
+- type: webpage
+  id: jenkins
+  title: Jenkins Project
+  URL: https://jenkins.io
+
+nocite: |
+  @*
 ...

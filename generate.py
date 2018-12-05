@@ -162,6 +162,7 @@ def main():
         resource_paths.append(fpga_diagrams_root + "/" + resource)
 
     additional_pandoc_args = ["--standalone", "--number-sections",
+                              "--filter", "pandoc-citeproc",
                               "--template", template,
                               "--resource-path=" + ":".join(resource_paths),
                               "--pdf-engine=xelatex",

@@ -20,7 +20,12 @@ Verification methodologies and tools, such as UVM and SystemVerilog, were excell
 
 On the user’s side, the Sigrok interface and system drivers have been created to allow the client computer to recognize and connect via USB to the logic analyzer. The software/hardware integration will be a major hurdle, especially at the target speeds, however there is sufficient documentation concerning the Cypress FX-3 to complete that requirement.
 
-<!-- ## Literature Search ## -->
+## Literature Search ##
+
+Verification of digital designs requires specialized tools called logic analyzers. Logic analyzers allow for multiple digital signals to be read at the same time which allows for multiple signal communications protocols to be debugged. Through our research, we learned about an important limiting theorem, the Nyquist rate [@Nyquist1928], and how that will determine our maximum data rate. State of the art logic analyzers can read multiple gigabytes of data per second across tens of different digital signals. Our project will not be cutting edge. We will be creating a budget specific, entry-level logic analyzer that will read 16 digital signals and send that signal to a personal computer to be displayed.
+
+Through our research we have found books and articles discussing printed circuit boards, low-voltage high-frequency digital signaling, USB 3.0 test systems, FPGA data acquisition. These articles and books have helped us solidify our understanding of these systems, and we will be using them continuously in the design and implementation of our project. We will inevitably need to research more on specific topics as we get further into the design cycle. 
+
 
 <!-- [Similarly, present your updated literature search adding to those that you explained in Chapter 1 of 195A workbook.] -->
 
